@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nouryn Eryssa | 2nd Year Actuarial Science Undergraduate</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .fact-photo {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 8;
+        object-fit: cover;
+        object-position: center;
+        margin: 10px 0 16px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+      }
+      .hero-polaroid {
+        width: min(100%, 390px);
+        min-height: 0;
+        margin: 0 0 0 auto;
+        padding: 18px 18px 52px;
+        background: #fff;
+        border: 1px solid rgba(92, 182, 255, 0.52);
+        border-radius: 8px;
+        box-shadow: 14px 16px 0 rgba(0, 0, 71, 0.16), 0 18px 40px rgba(0, 0, 71, 0.2);
+        transform: rotate(1deg);
+        overflow: visible;
+      }
+      .hero-polaroid .slide {
+        min-height: 0;
+        height: 390px;
+        padding: 0;
+        background: transparent;
+      }
+      .hero-polaroid .slide.active { display: block; }
+      .hero-polaroid .slide img {
+        display: block;
+        width: 100%;
+        height: 340px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .hero-polaroid .slide p {
+        position: static;
+        margin: 0;
+        padding: 14px 2px 0;
+        background: transparent;
+        color: #000047;
+        border-radius: 0;
+        font: 600 0.86rem "DM Mono", monospace;
+        text-align: left;
+      }
+      .hero-polaroid .slide-controls { right: 11px; bottom: 11px; }
+      .hero-polaroid .slide-controls button { background: #000047; }
+      .currently-grid { align-items: center; }
+      .currently-gallery {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        grid-template-rows: repeat(2, 150px);
+        gap: 12px;
+        width: min(100%, 460px);
+        justify-self: center;
+      }
+      .currently-gallery img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+      }
+      .currently-gallery .currently-main { grid-row: span 2; }
+      @media (min-width: 761px) {
+        .grid.two.currently-grid { grid-template-columns: 0.82fr 1.18fr; }
+      }
+      @media (max-width: 760px) {
+        .hero-polaroid { margin: 0 auto; transform: rotate(.5deg); }
+        .currently-gallery { width: min(100%, 420px); }
+      }
+      .button,
+      .slide-controls button,
+      [data-top] {
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease,
+          background-color 0.2s ease;
+      }
+      .button:hover,
+      .button:focus-visible,
+      .slide-controls button:hover,
+      .slide-controls button:focus-visible,
+      [data-top]:hover,
+      [data-top]:focus-visible {
+        background: #edf7ff;
+        color: #000047;
+        border-color: var(--accent);
+        box-shadow:
+          0 0 0 4px rgba(92, 182, 255, 0.18),
+          0 0 18px rgba(92, 182, 255, 0.42);
+        transform: translateY(-2px);
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav"><div class="shell nav-inner"></div></header>
+    <main>
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div>
+            <p class="eyebrow">Actuarial science · data · innovation</p>
+            <h1>Nouryn<br /><em>Eryssa</em></h1>
+            <h3>
+              2nd Year Actuarial Science Undergraduate | Data, Risk & FinTech
+            </h3>
+            <p class="lede">
+              Exploring the intersection of actuarial science, analytics,
+              artificial intelligence, business intelligence and technology
+              through projects, leadership and continuous learning.
+            </p>
+            <div class="buttons">
+              <a class="button" href="projects.html">View projects →</a
+              ><a class="button ghost" href="about.html">About me →</a>
+            </div>
+            <p class="kicker" style="margin-top: 20px">
+              📍 Puchong, Selangor, Malaysia<br />🎓 UiTM Shah Alam| Bachelor of
+              Actuarial Science (Hons.)
+            </p>
+          </div>
+          <div class="slideshow hero-polaroid" data-slideshow>
+            <div class="slide active">
+              <img
+                src="assets/home-polaroid/frame-1.jpeg"
+                alt="Nouryn Eryssa outdoors at night"
+              />
+              <p>Get to know me</p>
+            </div>
+            <div class="slide">
+              <img
+                src="assets/home-polaroid/frame-2.jpeg"
+                alt="Nouryn Eryssa receiving a Dean's Award"
+              />
+              <p>Get to know me</p>
+            </div>
+            <div class="slide">
+              <img
+                src="assets/home-polaroid/frame-3.jpeg"
+                alt="Nouryn Eryssa at a UiTM volunteer event"
+              />
+              <p>Get to know me</p>
+            </div>
+            <div class="slide">
+              <img src="assets/home-polaroid/frame-4.jpeg" alt="Nouryn Eryssa with the UiTM volunteer flag" />
+              <p>Get to know me</p>
+            </div>
+            <div class="slide">
+              <img src="assets/home-polaroid/frame-5.jpeg" alt="Nouryn Eryssa at an actuarial event" />
+              <p>Get to know me</p>
+            </div>
+            <div class="slide-controls">
+              <button data-prev aria-label="Previous image">←</button
+              ><button data-next aria-label="Next image">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section alt">
+        <div class="shell grid two currently-grid">
+          <div class="currently-gallery" aria-label="Nouryn's current learning and event moments">
+            <img class="currently-main" src="assets/personal/professional-portrait.jpeg" alt="Nouryn Eryssa in a professional blazer" />
+            <img src="assets/personal/library-portrait.jpeg" alt="Nouryn Eryssa exploring a library" />
+            <img src="assets/personal/ifoa-event.jpeg" alt="Nouryn Eryssa at an actuarial event" />
+          </div>
+          <div class="currently-copy">
+            <p class="eyebrow">Currently</p>
+            <h2>Learning beyond the classroom.</h2>
+            <p class="intro">
+              I am currently pursuing a Bachelor of Actuarial Science (Hons.) at
+              UiTM, where I am strengthening my foundation in probability,
+              statistics, financial mathematics and risk management. Alongside
+              my degree, I am developing practical capability in Excel, Power
+              BI, SQL, Python and data storytelling, while exploring AI-assisted
+              development and technology-enabled business solutions. Beyond the
+              classroom, I take on leadership, event-management and volunteering
+              roles that strengthen how I communicate, organise work and
+              contribute within diverse teams.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow">A few things about me</p>
+          <h2>Small facts. Big curiosity.</h2>
+          <div class="grid fun-slider">
+            <article class="card">
+              📊
+              <img
+                class="fact-photo"
+                src="assets/home-facts/actuarial-study.jpeg"
+                alt="Actuarial science study notes"
+              />
+              <h3>Actuarial Science Student</h3>
+              <p>
+                An Actuarial Science student with a love for mathematics,
+                problem solving, and analytical thinking.
+              </p>
+            </article>
+            <article class="card">
+              🎷
+              <img
+                class="fact-photo"
+                src="assets/home-facts/brass-band.jpeg"
+                alt="Nouryn holding a flute"
+              />
+              <h3>Brass Band</h3>
+              <p>
+                Plays the flute occasionally as a brass band member at UiTM Shah
+                Alam.
+              </p>
+            </article>
+            <article class="card">
+              📈
+              <img
+                class="fact-photo"
+                src="assets/home-facts/ai-technology.jpeg"
+                alt="Analytics software on a laptop"
+              />
+              <h3>Exploring AI & Technology</h3>
+              <p>
+                Exploring AI-assisted development through hands on projects.
+              </p>
+            </article>
+            <article class="card">
+              🧵
+              <img
+                class="fact-photo"
+                src="assets/home-facts/creative-side.jpeg"
+                alt="A cat beside handmade faux flowers"
+              />
+              <h3>Creative Side</h3>
+              <p>
+                A creative at heart with skils ranging from cooking and
+                crocheting to making faux flowers, DIY bracelets and keychains.
+              </p>
+            </article>
+            <article class="card">
+              🎓
+              <img
+                class="fact-photo"
+                src="assets/home-facts/tutoring.jpeg"
+                alt="A classroom learning activity"
+              />
+              <h3>Tutoring & Mentoring</h3>
+              <p>
+                Enjoy volunteering as a tutor and mentor, helping others
+                understand something they once found difficult.
+              </p>
+            </article>
+            <article class="card">
+              🌱
+              <img
+                class="fact-photo"
+                src="assets/home-facts/beyond-uitm.jpeg"
+                alt="Volunteer group at a community programme"
+              />
+              <h3>Beyond UiTM</h3>
+              <p>
+                Always seeking opportunities beyond UiTM through competitions,
+                camps, volunteering, and external programmes.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section alt">
+        <div class="shell">
+          <p class="eyebrow">What I’m exploring</p>
+          <div class="grid">
+            <article class="card">
+              <h3>Analytics</h3>
+              <p>
+                Power BI · Excel · Data Visualisation · Business Intelligence ·
+                SAP Analytics Cloud
+              </p>
+            </article>
+            <article class="card">
+              <h3>Technology</h3>
+              <p>
+                AI Tools · React · APIs · Full-Stack Foundations · Cloud
+                Technologies
+              </p>
+            </article>
+            <article class="card">
+              <h3>Leadership</h3>
+              <p>
+                Event Management · Committees · Volunteering · Teamwork ·
+                Communication
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow">Featured projects</p>
+          <h2>Stories, Data, And Impact.</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>Keyreyn</h3>
+              <p>
+                Innovation · biometric payment concept using iris-recognition
+                authentication.
+              </p>
+              <p class="tag">Fintech</p>
+              <p class="tag">Security</p>
+              <p><a class="button" href="projects.html">View project →</a></p>
+            </article>
+            <article class="card">
+              <h3>Project ARI</h3>
+              <p>
+                Innovation · IoT-enabled waste collection, filtration and
+                environmental monitoring concept.
+              </p>
+              <p class="tag">IoT</p>
+              <p class="tag">Sustainability</p>
+              <p><a class="button" href="projects.html">View project →</a></p>
+            </article>
+            <article class="card">
+              <h3>Nature’s Canvas</h3>
+              <p>
+                Innovation · Arduino-supported seed-paper production concept
+                from recycled paper.
+              </p>
+              <p class="tag">Automation</p>
+              <p class="tag">Circular design</p>
+              <p><a class="button" href="projects.html">View project →</a></p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section alt">
+        <div class="shell">
+          <p class="eyebrow">Selected experiences</p>
+          <div class="timeline">
+            <article>
+              <h3>2026 — Actuarial Case Excellence Competition</h3>
+              <p>
+                Director role for a national competition under Actuarial Science
+                Club (UiTM Shah Alam).
+              </p>
+            </article>
+            <article>
+              <h3>2026 — Leadership, events & volunteering</h3>
+              <p>
+                Committee and community roles within UiTM and external
+                organizations.
+              </p>
+            </article>
+            <article>
+              <h3>2025–Present — Actuarial Science at UiTM</h3>
+              <p>
+                Academic development alongside club and mobility involvement.
+              </p>
+            </article>
+            <article>
+              <h3>2024–2025 — Teratai Amora</h3>
+              <p>Founder experience running a handmade bouquet business.</p>
+            </article>
+          </div>
+          <a class="button" href="experience.html">View all experiences →</a>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow">Credentials preview</p>
+          <div class="grid">
+            <article class="card"><h3>AI+ Security Level 1</h3></article>
+            <article class="card"><h3>SAS SQL Essentials</h3></article>
+            <article class="card">
+              <h3>SAS Statistical Business Analyst</h3>
+            </article>
+            <article class="card">
+              <h3>EY–Microsoft AI Skills Passport</h3>
+            </article>
+            <article class="card"><h3>AWS Cloud Essentials</h3></article>
+            <article class="card">
+              <h3>Insurance & IFRS 17 Foundations</h3>
+            </article>
+          </div>
+          <div class="buttons">
+            <a class="button" href="certifications.html"
+              >View all certifications →</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="section alt">
+        <div class="shell">
+          <p class="eyebrow">Highlights</p>
+          <div class="grid">
+            <article class="card">
+              <div class="metric">3.87</div>
+              <h3>Current CGPA</h3>
+              <p>Dean’s List, UiTM</p>
+            </article>
+            <article class="card">
+              <div class="metric">4.00</div>
+              <h3>Foundation CGPA</h3>
+              <p>University of Malaya</p>
+            </article>
+            <article class="card">
+              <div class="metric">4</div>
+              <h3>Innovation projects</h3>
+              <p>Featured in the portfolio</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow">Let’s connect</p>
+          <h2>Saw something interesting?</h2>
+          <div class="buttons">
+            <a class="button bubble" href="mailto:nourynhazrin@gmail.com"
+              >Email</a
+            ><a class="button ghost bubble" href="contact.html"
+              >Contact details →</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell footer-inner">
+        <span>© 2026 Nouryn Eryssa</span
+        ><button data-top class="theme-toggle">Back to top ↑</button>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <style>
+      .currently-copy .intro {
+        text-align: justify;
+        text-align-last: left;
+      }
+    </style>
+  </body>
+</html>
