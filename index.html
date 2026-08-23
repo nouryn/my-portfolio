@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nouryn Eryssa | 2nd Year Actuarial Science Undergraduate</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .fact-photo {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 8;
+        object-fit: cover;
+        object-position: center;
+        margin: 10px 0 16px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+      }
+      .hero-polaroid {
+        width: min(100%, 390px);
+        min-height: 0;
+        margin: 0 0 0 auto;
+        padding: 18px 18px 52px;
+        background: #fff;
+        border: 1px solid rgba(92, 182, 255, 0.52);
+        border-radius: 8px;
+        box-shadow:
+          14px 16px 0 rgba(0, 0, 71, 0.16),
+          0 18px 40px rgba(0, 0, 71, 0.2);
+        transform: rotate(1deg);
+        overflow: visible;
+      }
+      .hero-polaroid .slide {
+        min-height: 0;
+        height: 390px;
+        padding: 0;
+        background: transparent;
+      }
+      .hero-polaroid .slide.active {
+        display: block;
+      }
+      .hero-polaroid .slide img {
+        display: block;
+        width: 100%;
+        height: 340px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .hero-polaroid .slide p {
+        position: static;
+        margin: 0;
+        padding: 14px 2px 0;
+        background: transparent;
+        color: #000047;
+        border-radius: 0;
+        font:
+          600 0.86rem "DM Mono",
+          monospace;
+        text-align: left;
+      }
+      .hero-polaroid .slide-controls {
+        right: 11px;
+        bottom: 11px;
+      }
+      .hero-polaroid .slide-controls button {
+        background: #000047;
+      }
+      .currently-grid {
+        align-items: center;
+      }
+      .currently-gallery {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        grid-template-rows: repeat(2, 150px);
+        gap: 12px;
+        width: min(100%, 460px);
+        justify-self: center;
+      }
+      .currently-gallery img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+      }
+      .currently-gallery .currently-main {
+        grid-row: span 2;
+      }
+      @media (min-width: 761px) {
+        .grid.two.currently-grid {
+          grid-template-columns: 0.82fr 1.18fr;
+        }
+      }
+      @media (max-width: 760px) {
+        .hero-polaroid {
+          margin: 0 auto;
+          transform: rotate(0.5deg);
+        }
+        .currently-gallery {
+          width: min(100%, 420px);
+        }
+      }
+      .button,
+      .slide-controls button,
+      [data-top] {
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease,
+          background-color 0.2s ease;
+      }
+      .button:hover,
+      .button:focus-visible,
+      .slide-controls button:hover,
+      .slide-controls button:focus-visible,
+      [data-top]:hover,
+      [data-top]:focus-visible {
+        background: #edf7ff;
+        color: #000047;
+        border-color: var(--accent);
+        box-shadow:
+          0 0 0 4px rgba(92, 182, 255, 0.18),
+          0 0 18px rgba(92, 182, 255, 0.42);
+        transform: translateY(-2px);
+        outline: none;
+      }
+      .project-card-link {
+        display: flex;
+        align-self: flex-start;
+        width: max-content;
+        margin-top: 12px;
+      }
+      .project-card-link:hover,
+      .project-card-link:focus-visible {
+        background: var(--accent);
+        color: var(--navy-deep);
+        border-color: var(--accent);
+        box-shadow: 4px 4px 0 rgba(85, 184, 255, 0.35);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav"><div class="shell nav-inner"></div></header>
+    <main>
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div>
+            <p class="eyebrow">Actuarial science · data · innovation</p>
+            <h1>Nouryn<br /><em>Eryssa</em></h1>
+            <h3>
+              2nd Year Actuarial Science Undergraduate | Data, Risk & FinTech
+            </h3>
+            <p class="lede">
+              Exploring the intersection of actuarial science, analytics,
+              artificial intelligence, business intelligence and technology
+              through projects, leadership and continuous learning.
+            </p>
+            <div class="buttons">
+              <a class="button" href="projects.html">View projects →</a
+              ><a class="button ghost" href="about.html">About me →</a>
+            </div>
+            <p class="kicker" style="margin-top: 20px">
+              📍 Puchong, Selangor, Malaysia<br />🎓 UiTM Shah Alam| Bachelor of
+              Actuarial Science (Hons.)
+            </p>
+          </div>
+          <div class="slideshow hero-polaroid" data-slideshow>
+            <div class="slide active">
+              <img
+                src="assets/home-polaroid/frame-1.jpeg"
+                alt="Nouryn Eryssa outdoors at night"
+              />
+              <p>Get to know me</p>
+            </div>
+            <div class="slide">
+              <img
+                src="assets/home-polaroid/frame-2.jpeg"
+                alt="Nouryn Eryssa receiving a Dean's Award"
+              />
+              <p>Get to know me</p>
+            </div>
+            <div class="slide">
+              <img
+                src="assets/home-polaroid/frame-3.jpeg"
+                alt="Nouryn Eryssa at a UiTM volunteer event"
+              />
+              <p>Get to know me</p>
+            </div>
+            <div class="slide">
+              <img
+                src="assets/home-polaroid/frame-4.jpeg"
+                alt="Nouryn Eryssa with the UiTM volunteer flag"
+              />
+              <p>Get to know me</p>
+            </div>
+            <div class="slide">
+              <img
+                src="assets/home-polaroid/frame-5.jpeg"
+                alt="Nouryn Eryssa at an actuarial event"
+              />
+              <p>Get to know me</p>
+            </div>
+            <div class="slide-controls">
+              <button data-prev aria-label="Previous image">←</button
+              ><button data-next aria-label="Next image">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section alt">
+        <div class="shell grid two currently-grid">
+          <div
+            class="currently-gallery"
+            aria-label="Nouryn's current learning and event moments"
+          >
+            <img
+              class="currently-main"
+              src="assets/personal/professional-portrait.jpeg"
+              alt="Nouryn Eryssa in a professional blazer"
+            />
+            <img
+              src="assets/personal/library-portrait.jpeg"
+              alt="Nouryn Eryssa exploring a library"
+            />
+            <img
+              src="assets/personal/ifoa-event.jpeg"
+              alt="Nouryn Eryssa at an actuarial event"
+            />
+          </div>
+          <div class="currently-copy">
+            <p class="eyebrow">Currently</p>
+            <h2>Learning beyond the classroom.</h2>
+            <p class="intro">
+              I am currently pursuing a Bachelor of Actuarial Science (Hons.) at
+              UiTM, where I am strengthening my foundation in probability,
+              statistics, financial mathematics and risk management. Alongside
+              my degree, I am developing practical capability in Excel, Power
+              BI, SQL, Python and data storytelling, while exploring AI-assisted
+              development and technology-enabled business solutions. Beyond the
+              classroom, I take on leadership, event-management and volunteering
+              roles that strengthen how I communicate, organise work and
+              contribute within diverse teams.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow">A few things about me</p>
+          <h2>Small facts. Big curiosity.</h2>
+          <div class="grid fun-slider">
+            <article class="card">
+              📊
+              <img
+                class="fact-photo"
+                src="assets/home-facts/actuarial-study.jpeg"
+                alt="Actuarial science study notes"
+              />
+              <h3>Actuarial Science Student</h3>
+              <p>
+                An Actuarial Science student with a love for mathematics,
+                problem solving, and analytical thinking.
+              </p>
+            </article>
+            <article class="card">
+              🎷
+              <img
+                class="fact-photo"
+                src="assets/home-facts/brass-band.jpeg"
+                alt="Nouryn holding a flute"
+              />
+              <h3>Brass Band</h3>
+              <p>
+                Plays the flute occasionally as a brass band member at UiTM Shah
+                Alam.
+              </p>
+            </article>
+            <article class="card">
+              📈
+              <img
+                class="fact-photo"
+                src="assets/home-facts/ai-technology.jpeg"
+                alt="Analytics software on a laptop"
+              />
+              <h3>Exploring AI & Technology</h3>
+              <p>
+                Exploring AI-assisted development through hands on projects.
+              </p>
+            </article>
+            <article class="card">
+              🧵
+              <img
+                class="fact-photo"
+                src="assets/home-facts/creative-side.jpeg"
+                alt="A cat beside handmade faux flowers"
+              />
+              <h3>Creative Side</h3>
+              <p>
+                A creative at heart with skils ranging from cooking and
+                crocheting to making faux flowers, DIY bracelets and keychains.
+              </p>
+            </article>
+            <article class="card">
+              🎓
+              <img
+                class="fact-photo"
+                src="assets/home-facts/tutoring.jpeg"
+                alt="A classroom learning activity"
+              />
+              <h3>Tutoring & Mentoring</h3>
+              <p>
+                Enjoy volunteering as a tutor and mentor, helping others
+                understand something they once found difficult.
+              </p>
+            </article>
+            <article class="card">
+              🌱
+              <img
+                class="fact-photo"
+                src="assets/home-facts/beyond-uitm.jpeg"
+                alt="Volunteer group at a community programme"
+              />
+              <h3>Beyond UiTM</h3>
+              <p>
+                Always seeking opportunities beyond UiTM through competitions,
+                camps, volunteering, and external programmes.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section alt skill-showcase">
+        <div class="shell">
+          <p class="eyebrow">Skills</p>
+          <h2>Data-minded. <span class="accent">Business-ready.</span></h2>
+          <div class="grid two">
+            <article class="card">
+              <h3>Analytics & BI</h3>
+              <p>
+                Excel, Power Query, Power BI, data visualisation, dashboards and
+                data storytelling.
+              </p>
+              <div class="skill-marquee" aria-label="Analytics tools">
+                <div class="skill-marquee-track">
+                  <div class="skill-marquee-set">
+                    <img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/mysql"
+                      alt="Excel"
+                    /><img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/r"
+                      alt="Power BI"
+                    /><img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/github"
+                      alt="Microsoft"
+                    /><img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/insomnia"
+                      alt="Data visualisation"
+                    />
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Programming</h3>
+              <p>
+                Python, R, SQL, JavaScript, TypeScript, C++, HTML, CSS, React
+                and Node.js.
+              </p>
+              <div class="skill-marquee" aria-label="Programming tools">
+                <div class="skill-marquee-track">
+                  <div class="skill-marquee-set">
+                    <img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/python"
+                      alt="Python"
+                    /><img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/r"
+                      alt="R"
+                    /><img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/mysql"
+                      alt="SQL"
+                    /><img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/react"
+                      alt="React"
+                    /><img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/nodedotjs"
+                      alt="Node.js"
+                    />
+                  </div>
+                </div>
+              </div>
+            </article>
+            <div class="skill-card-stack">
+              <article class="card">
+                <h3>Risk & finance</h3>
+                <p>
+                  Statistical modelling, financial mathematics, risk management,
+                  ALM, insurance and IFRS 17.
+                </p>
+              </article>
+              <article class="card">
+                <h3>Accounting software</h3>
+                <p>
+                  AutoCount Cloud for practical accounting and business
+                  operations.
+                </p>
+              </article>
+            </div>
+            <article class="card">
+              <h3>Data & cloud</h3>
+              <p>
+                PostgreSQL, Supabase, database design, Git/GitHub and cloud
+                fundamentals.
+              </p>
+              <div class="skill-marquee" aria-label="Data and cloud tools">
+                <div class="skill-marquee-track">
+                  <div class="skill-marquee-set">
+                    <img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/postgresql"
+                      alt="PostgreSQL"
+                    /><img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/supabase"
+                      alt="Supabase"
+                    /><img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/github"
+                      alt="GitHub"
+                    /><img
+                      class="skill-logo"
+                      src="https://cdn.simpleicons.org/nodedotjs"
+                      alt="Cloud"
+                    />
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow" id="innovation">Innovation</p>
+          <h2>Ideas with a <span class="accent">purpose.</span></h2>
+          <p class="intro">
+            Technical and entrepreneurial concepts spanning fintech,
+            environmental technology and circular design.
+          </p>
+          <div class="grid project-grid">
+            <article class="card">
+              <p class="kicker">Fintech concept</p>
+              <h3>Keyreyn</h3>
+              <p>
+                Secure, contactless payment using iris-recognition
+                authentication.
+              </p>
+              <span class="tag">Fintech</span>
+              <span class="tag">Authentication</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#innovation"
+                href="project-keyreyn.html"
+                >Open case study →</a
+              >
+            </article>
+            <article class="card">
+              <p class="kicker">Environmental technology</p>
+              <h3>Project ARI</h3>
+              <p>An IoT-enabled waterway clean-up and monitoring solution.</p>
+              <span class="tag">IoT</span>
+              <span class="tag">Sustainability</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#innovation"
+                href="project-ari.html"
+                >Open case study →</a
+              >
+            </article>
+            <article class="card">
+              <p class="kicker">Circular design</p>
+              <h3>Nature’s Canvas</h3>
+              <p>
+                An Arduino-enabled concept for converting waste paper into seed
+                paper.
+              </p>
+              <span class="tag">Automation</span>
+              <span class="tag">Circular economy</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#innovation"
+                href="project-natures-canvas.html"
+                >Open case study →</a
+              >
+            </article>
+          </div>
+          <a
+            class="button"
+            data-return-target="#innovation"
+            href="projects.html"
+            >See more innovation projects →</a
+          >
+        </div>
+      </section>
+      <section class="section alt">
+        <div class="shell">
+          <p class="eyebrow" id="business-intelligence">
+            Business intelligence & data analytics
+          </p>
+          <h2>Turning data into <span class="accent">direction.</span></h2>
+          <p class="intro">
+            Analytical work that connects structured data, visual storytelling
+            and practical business decisions.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <h3>Dashboard development</h3>
+              <p>
+                Power BI dashboards that turn operational data into clear,
+                decision-ready views.
+              </p>
+              <span class="tag">Power BI</span>
+              <span class="tag">Visualisation</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#business-intelligence"
+                href="business-intelligence-dashboard.html"
+                >Open case study →</a
+              >
+            </article>
+            <article class="card">
+              <h3>Data preparation</h3>
+              <p>
+                Excel, Power Query and SQL workflows for cleaning, shaping and
+                organising reliable datasets.
+              </p>
+              <span class="tag">Excel</span>
+              <span class="tag">SQL</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#business-intelligence"
+                href="data-preparation.html"
+                >Open case study →</a
+              >
+            </article>
+            <article class="card">
+              <h3>Statistical analysis</h3>
+              <p>
+                Regression, modelling and data storytelling that support
+                evidence-based business analysis.
+              </p>
+              <span class="tag">Statistics</span>
+              <span class="tag">Data storytelling</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#business-intelligence"
+                href="statistical-analysis.html"
+                >Open case study →</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow" id="web-development">Web development</p>
+          <h2>
+            Building useful <span class="accent">digital experiences.</span>
+          </h2>
+          <p class="intro">
+            Frontend and full-stack foundations for responsive, data-aware and
+            user-focused web products.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <h3>Frontend development</h3>
+              <p>
+                Responsive interfaces built with HTML, CSS, JavaScript, React
+                and TypeScript.
+              </p>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#web-development"
+                href="frontend-development.html"
+                >Open case study →</a
+              >
+            </article>
+            <article class="card">
+              <h3>Full-stack foundations</h3>
+              <p>
+                Application development across APIs, Node.js, databases and
+                practical product workflows.
+              </p>
+              <span class="tag">APIs</span>
+              <span class="tag">Node.js</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#web-development"
+                href="full-stack-foundations.html"
+                >Open case study →</a
+              >
+            </article>
+            <article class="card">
+              <h3>Cloud & collaboration</h3>
+              <p>
+                Git/GitHub, PostgreSQL, Supabase and cloud fundamentals for
+                developing and maintaining modern web projects.
+              </p>
+              <span class="tag">Git/GitHub</span>
+              <span class="tag">Cloud</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#web-development"
+                href="cloud-collaboration.html"
+                >Open case study →</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section certifications-section" id="certifications">
+        <div class="shell">
+          <p class="eyebrow">Certifications & professional development</p>
+          <h2>Learning with <span class="accent">evidence.</span></h2>
+          <p class="intro">
+            A record of completed qualifications, digital credentials and
+            ongoing learning across analytics, technology, finance and risk.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <h3>Professional</h3>
+              <p>
+                SAS Certified Statistical Business Analyst Using SAS 9; AI+
+                Security Level 1; Takaful Basic Examination; Lean Six Sigma
+                White Belt.
+              </p>
+              <a
+                class="button"
+                target="_blank"
+                href="https://www.sas.com/en_my/certification.html"
+                >Source ↗</a
+              >
+            </article>
+            <article class="card">
+              <h3>Digital credentials</h3>
+              <p>
+                EY–Microsoft AI Skills Passport; AWS Cloud Essentials; SAS SQL
+                Essentials; Foundations of Risk and ALM; Foundations of
+                Insurance and IFRS 17.
+              </p>
+              <a
+                class="button"
+                target="_blank"
+                href="https://learn.microsoft.com/en-us/credentials/"
+                >Source ↗</a
+              >
+            </article>
+            <article class="card">
+              <h3>In progress</h3>
+              <p>SOA Exam P and FIMM Combined Examination, expected 2027.</p>
+              <a class="button" target="_blank" href="https://www.soa.org/"
+                >Source ↗</a
+              >
+            </article>
+          </div>
+          <a
+            class="button"
+            data-return-target="#certifications"
+            href="certifications.html"
+            >See more certifications →</a
+          >
+        </div>
+      </section>
+      <section
+        class="section professional-development-section"
+        id="professional-development"
+      >
+        <div class="shell">
+          <p class="eyebrow">Professional development</p>
+          <div class="grid">
+            <article class="card">
+              <h3>Analytics & BI</h3>
+              <p class="kicker">August 2026</p>
+              <p>Excel, Power Query, Power BI, DAX and data visualisation.</p>
+              <p class="tag">Proof image: upload pending</p>
+            </article>
+            <article class="card">
+              <h3>SAS & statistics</h3>
+              <p class="kicker">August 2026</p>
+              <p>SQL, regression and statistical business analysis.</p>
+              <p class="tag">Proof image: upload pending</p>
+            </article>
+            <article class="card">
+              <h3>Cloud & development</h3>
+              <p class="kicker">August 2026</p>
+              <p>AWS, Git/GitHub and AI-enabled full-stack development.</p>
+              <p class="tag">Proof image: upload pending</p>
+            </article>
+          </div>
+          <a
+            class="button"
+            data-return-target="#professional-development"
+            href="development.html"
+            >See more professional development →</a
+          >
+        </div>
+      </section>
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow">Let’s connect</p>
+          <h2>Saw something interesting?</h2>
+          <div class="buttons">
+            <a class="button bubble" href="mailto:nourynhazrin@gmail.com"
+              >Email</a
+            ><a class="button ghost bubble" href="contact.html"
+              >Contact details →</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell footer-inner">
+        <span>© 2026 Nouryn Eryssa</span
+        ><button data-top class="theme-toggle">Back to top ↑</button>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <style>
+      .currently-copy .intro {
+        text-align: justify;
+        text-align-last: left;
+      }
+    </style>
+  </body>
+</html>

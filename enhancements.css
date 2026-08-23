@@ -1,0 +1,122 @@
+/* Page-specific layers for the 2026 editorial redesign. */
+
+/* The image-led moments remain playful, but sit within the sharper studio system. */
+.hero-polaroid,
+.about-polaroid,
+.education-gallery .card,
+.journey-card,
+.polaroid {
+  border: 1px solid var(--line) !important;
+  border-radius: 3px !important;
+  box-shadow: 10px 10px 0 var(--shadow) !important;
+}
+
+.hero-polaroid,
+.about-polaroid { background: var(--surface) !important; }
+
+.hero-polaroid .slideshow,
+.about-polaroid .slideshow,
+.education-gallery .slideshow,
+.journey-card .slideshow,
+.hero-polaroid img,
+.about-polaroid img,
+.education-gallery img,
+.journey-card img { border-radius: 0 !important; }
+
+.slide-controls button,
+.hero-polaroid .slide-controls button,
+.about-polaroid .slide-controls button {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  padding: 0 !important;
+  border: 1px solid var(--ink) !important;
+  border-radius: 50% !important;
+  background: var(--ink) !important;
+  color: var(--surface) !important;
+}
+
+/* About page: each chapter gets its own material treatment. */
+.drives-section {
+  background: var(--surface-tint) !important;
+  border-top: 1px solid var(--line) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+.drives-section .drives-grid > * {
+  border: 1px solid var(--line) !important;
+  border-radius: 3px !important;
+  background: var(--surface) !important;
+  box-shadow: 6px 6px 0 var(--shadow) !important;
+}
+
+.profile-section,
+.profile-wrap { background: var(--navy-deep) !important; color: #fff !important; }
+
+[data-theme="light"] .profile-section,
+[data-theme="light"] .profile-wrap { background: var(--surface-tint) !important; color: var(--ink) !important; }
+
+.education-section,
+.education-journey { background: var(--surface) !important; border-top: 1px solid var(--line) !important; }
+
+.education-timeline::before,
+.timeline::before { background: var(--accent) !important; }
+
+/* Achievements use the same clear reading rhythm across both categories. */
+.achievement-section {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 3px !important;
+  box-shadow: 10px 10px 0 var(--shadow) !important;
+}
+
+.achievement-section.alt-list,
+.achievement-section:nth-of-type(even) { background: var(--surface-tint) !important; }
+
+.achievement-item,
+.achievement-row,
+.achievement-list > article {
+  border: 1px solid var(--line) !important;
+  border-radius: 2px !important;
+  background: var(--surface) !important;
+  box-shadow: none !important;
+}
+
+.achievement-item:hover,
+.achievement-row:hover,
+.achievement-list > article:hover {
+  transform: translate(4px, 4px) !important;
+  box-shadow: -4px -4px 0 var(--accent) !important;
+}
+
+.certificate-slot,
+.proof-slot {
+  border: 1px dashed var(--accent) !important;
+  border-radius: 0 !important;
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface)) !important;
+}
+
+/* Detail pages stay clear and practical, while carrying the shared visual language. */
+.site-header { background: var(--navy) !important; border-bottom: 1px solid rgba(255, 255, 255, .45) !important; }
+.site-header a,
+.site-header .brand { color: #fff !important; }
+
+.detail-hero,
+.detail-content,
+.detail-card,
+.project-detail,
+.experience-detail { border-radius: 3px !important; }
+
+.detail-card,
+.detail-content > article,
+.project-detail .panel,
+.experience-detail .panel { border: 1px solid var(--line) !important; box-shadow: 8px 8px 0 var(--shadow) !important; }
+
+@media (max-width: 800px) {
+  .hero-polaroid,
+  .about-polaroid,
+  .education-gallery .card,
+  .journey-card,
+  .achievement-section { box-shadow: 6px 6px 0 var(--shadow) !important; }
+}

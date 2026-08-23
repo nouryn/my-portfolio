@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Achievements | Nouryn Eryssa</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .achievement-section {
+        margin-top: 46px;
+      }
+      .achievement-section h2 {
+        margin-bottom: 8px;
+      }
+      .achievement-list {
+        display: grid;
+        gap: 13px;
+        margin-top: 22px;
+      }
+      .achievement-item {
+        display: grid;
+        grid-template-columns: minmax(215px, 0.9fr) minmax(0, 2.1fr) 164px;
+        gap: 25px;
+        align-items: center;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--card);
+        color: var(--ink);
+      }
+      .achievement-item .kicker {
+        margin: 0 0 7px;
+      }
+      .achievement-item h3 {
+        margin: 0;
+        font-size: 1.08rem;
+      }
+      .achievement-item p {
+        margin: 7px 0 0;
+        color: #49637d;
+        line-height: 1.62;
+      }
+      .achievement-item strong {
+        color: var(--accent);
+      }
+      .certificate-slot {
+        min-height: 94px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        padding: 14px;
+        border: 1px dashed var(--accent);
+        border-radius: 11px;
+        color: var(--ink);
+        background: color-mix(in srgb, var(--accent) 6%, var(--card));
+      }
+      .certificate-slot span {
+        font:
+          0.68rem "DM Mono",
+          monospace;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .certificate-slot strong {
+        font-size: 0.9rem;
+      }
+      .certificate-slot small {
+        color: #49637d;
+        line-height: 1.35;
+      }
+      .achievement-section.alt-list {
+        padding: 34px;
+        border-radius: 16px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+      }
+      @media (max-width: 850px) {
+        .achievement-item {
+          grid-template-columns: 1fr 1.7fr;
+        }
+        .certificate-slot {
+          grid-column: 1/-1;
+          min-height: auto;
+        }
+      }
+      @media (max-width: 620px) {
+        .achievement-item {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+        .achievement-section.alt-list {
+          padding: 20px;
+        }
+      }
+    </style>
+    <style>
+      /* Use a consistent framed layout for both achievement groups. */
+      .achievement-section {
+        padding: 34px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--surface);
+        color: var(--ink);
+        box-shadow: inset 4px 0 0 var(--accent);
+      }
+
+      .achievement-section.alt-list {
+        background: color-mix(in srgb, var(--surface) 90%, var(--accent) 10%);
+        border-color: var(--accent);
+        box-shadow: inset 4px 0 0 var(--ink);
+      }
+
+      @media (max-width: 620px) {
+        .achievement-section,
+        .achievement-section.alt-list {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav"><div class="shell nav-inner"></div></header>
+    <main>
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow">Achievements</p>
+          <h1>Progress, recognised.</h1>
+          <p class="intro">
+            A record of extracurricular recognition and academic milestones that
+            reflects my commitment to initiative, learning and continuous
+            growth.
+          </p>
+
+          <section class="achievement-section">
+            <p class="eyebrow">01 — Extracurricular</p>
+            <h2>Recognition beyond the classroom.</h2>
+            <div class="achievement-list">
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">Digital talent · 2026–2027</p>
+                  <h3>Trainee · KADA Malaysia Track</h3>
+                </div>
+                <div>
+                  <p>
+                    <strong
+                      >Garranto Academy × AKCF × NIPA Korea × MDEC ×
+                      UiTM</strong
+                    >
+                  </p>
+                  <p>
+                    Selected for a fully sponsored ASEAN–Korea programme in
+                    AI-enabled full-stack development, covering frontend and
+                    backend development, databases, APIs and application
+                    development.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Acceptance or completion proof</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">Data & technology · 2026</p>
+                  <h3>
+                    Participant · ASEAN Data Science Explorers Enablement
+                    Session
+                  </h3>
+                </div>
+                <div>
+                  <p><strong>AYO × ASEAN Foundation × SAP</strong></p>
+                  <p>
+                    Selected for a scholarship-based session covering SAP
+                    Analytics Cloud, data analysis, data storytelling and
+                    analytical problem solving in an ASEAN-focused learning
+                    environment.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Participation certificate</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">Sustainability · 2026</p>
+                  <h3>Participant · Malaysian Youth SDG Summit</h3>
+                </div>
+                <div>
+                  <p><strong>MySDG Academy</strong></p>
+                  <p>
+                    Selected from more than 600 applicants for a national
+                    programme on the SDGs, youth leadership, social impact and
+                    community development.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Participation certificate</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">International mobility · 2026</p>
+                  <h3>Delegate · Global Actuarial Mobility Programme (GAMP)</h3>
+                </div>
+                <div>
+                  <p>
+                    <strong
+                      >Universiti Teknologi MARA × Institut Teknologi
+                      Bandung</strong
+                    >
+                  </p>
+                  <p>
+                    Selected as a UiTM delegate for academic sessions, actuarial
+                    research seminars and collaborative engagement with ITB’s
+                    actuarial community in Indonesia.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Delegate certificate</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">Youth leadership · 2025</p>
+                  <h3>Delegate · Youth Speak Forum</h3>
+                </div>
+                <div>
+                  <p><strong>AIESEC · University of Malaya</strong></p>
+                  <p>
+                    Participated in discussions on youth development,
+                    leadership, social issues and community empowerment,
+                    strengthening communication and critical-thinking skills.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Delegate certificate</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">Innovation · 2025</p>
+                  <h3>
+                    Silver Award · Pre-University Matriculation Innovation
+                    Competition
+                  </h3>
+                </div>
+                <div>
+                  <p>
+                    <strong
+                      >Pusat Asasi Sains dan Perubatan UniSZA · University of
+                      Malaya</strong
+                    >
+                  </p>
+                  <p>
+                    Received Silver for a waterproof, biodegradable packaging
+                    concept made using mushroom waste and used tea bags as
+                    alternative raw materials.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Silver award certificate</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">Innovation · 2023</p>
+                  <h3>
+                    Bronze Award · International Invention, Innovation & Design
+                    Competition
+                  </h3>
+                </div>
+                <div>
+                  <p>
+                    <strong
+                      >Kolej Vokasional Tanah Merah, DIGIT360 & UiTM</strong
+                    >
+                  </p>
+                  <p>
+                    Awarded Bronze for a biometric payment concept using iris
+                    recognition and proposed ESP32-CAM integration for secure,
+                    contactless transactions.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Bronze award certificate</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">Creative technology · 2023</p>
+                  <h3>Participant · Animation & Creative Camp</h3>
+                </div>
+                <div>
+                  <p><strong>MMU × SAS</strong></p>
+                  <p>
+                    Developed storyboards and animation sequences through a
+                    hands-on camp using Apple products and creative software for
+                    visual storytelling.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Participation certificate</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">Digital skills · 2022</p>
+                  <h3>3rd Place · Digital Ninja Programme</h3>
+                </div>
+                <div>
+                  <p>
+                    <strong>Malaysia Digital Economy Corporation (MDEC)</strong>
+                  </p>
+                  <p>
+                    Achieved 3rd place for an IoT-enabled environmental solution
+                    addressing plastic pollution and water quality, combining an
+                    Arduino and ESP32-CAM-powered waste-collecting boat,
+                    stationary filtration and a monitoring application.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Digital Ninja certificate or award proof</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">Writing · 2022</p>
+                  <h3>Silver Award · Queen’s Commonwealth Essay Competition</h3>
+                </div>
+                <div>
+                  <p><strong>Royal Commonwealth Society · KISAS</strong></p>
+                  <p>
+                    Received a Silver Award in an international writing
+                    competition, demonstrating written communication, critical
+                    thinking, creativity and structured argumentation.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Silver award certificate</small>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="achievement-section alt-list">
+            <p class="eyebrow">02 — Academic</p>
+            <h2>Academic milestones.</h2>
+            <div class="achievement-list">
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">UiTM · Semester 1</p>
+                  <h3>Bachelor of Actuarial Science (Hons.)</h3>
+                </div>
+                <div>
+                  <p><strong>CGPA 3.87 · Dean’s List</strong></p>
+                  <p>
+                    Universiti Teknologi MARA. Achieved Dean’s List recognition
+                    in the first semester of the programme.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Semester result or Dean’s List proof</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">UM · Semester 1</p>
+                  <h3>Foundation in Social Sciences</h3>
+                </div>
+                <div>
+                  <p><strong>CGPA 4.00 · Dean’s List</strong></p>
+                  <p>
+                    University of Malaya. Achieved a perfect 4.00 CGPA during
+                    Semester 1.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Semester result or Dean’s List proof</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">UM · Semester 2</p>
+                  <h3>Foundation in Social Sciences</h3>
+                </div>
+                <div>
+                  <p><strong>CGPA 4.00 · Dean’s List</strong></p>
+                  <p>
+                    University of Malaya. Maintained a perfect 4.00 CGPA in
+                    Semester 2 of the Business Major programme.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Semester result or Dean’s List proof</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">Secondary education</p>
+                  <h3>SPM Examination</h3>
+                </div>
+                <div>
+                  <p><strong>5A+ · 4A · 2A− · Gold Award</strong></p>
+                  <p>
+                    Kolej Islam Sultan Alam Shah (Kolej Islam Klang). Achieved
+                    11As in the SPM examination.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>SPM result or award proof</small>
+                </div>
+              </article>
+              <article class="achievement-item">
+                <div>
+                  <p class="kicker">Secondary education</p>
+                  <h3>SPM Trial Examination</h3>
+                </div>
+                <div>
+                  <p><strong>Principal’s Award</strong></p>
+                  <p>
+                    Kolej Islam Sultan Alam Shah. Rebounded from 5As in the
+                    midterm examination to 10As in the SPM trial examination,
+                    earning recognition for this improvement.
+                  </p>
+                </div>
+                <div class="certificate-slot">
+                  <span>Certificate / proof</span><strong>To be added</strong
+                  ><small>Principal’s Award proof</small>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell footer-inner"><span>© 2026 Nouryn Eryssa</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

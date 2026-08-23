@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About | Nouryn Eryssa</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .about-copy p {
+        text-align: justify;
+        text-align-last: left;
+      }
+      .about-polaroid {
+        box-sizing: border-box;
+        width: min(100%, 360px);
+        max-width: 360px !important;
+        min-height: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 14px 14px 48px;
+        background: #fff;
+        border: 1px solid rgba(92, 182, 255, 0.58);
+        border-radius: 7px;
+        box-shadow:
+          13px 15px 0 rgba(0, 0, 71, 0.14),
+          0 18px 36px rgba(0, 0, 71, 0.22);
+        transform: rotate(-0.8deg);
+        overflow: visible;
+      }
+      .about-polaroid .slide {
+        min-height: 0;
+        height: 360px;
+        padding: 0;
+      }
+      .about-polaroid .slide.active {
+        display: block;
+      }
+      .about-polaroid .slide img {
+        display: block;
+        width: 100%;
+        height: 360px !important;
+        object-fit: cover;
+        object-position: center;
+      }
+      .about-polaroid .slide-controls {
+        right: 11px;
+        bottom: 10px;
+      }
+      .about-polaroid .slide-controls button {
+        background: #000047;
+      }
+      .about-polaroid-caption {
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        margin: 0;
+        color: #000047;
+        font:
+          600 0.74rem "DM Mono",
+          monospace;
+      }
+      .polaroid-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .education-gallery .slideshow {
+        min-height: 0 !important;
+        aspect-ratio: 16 / 9;
+      }
+      .education-gallery .slide {
+        min-height: 0 !important;
+        height: 100%;
+        padding: 0;
+        place-items: center;
+      }
+      .education-gallery .slide img {
+        width: 100%;
+        height: 100% !important;
+        object-fit: cover;
+        object-position: center center;
+      }
+      .education-detail-link {
+        display: inline-block;
+        margin-top: 4px;
+        color: var(--accent);
+        font:
+          500 0.78rem "DM Mono",
+          monospace;
+      }
+      .timeline .education-entry {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      .education-logo {
+        flex: 0 0 58px;
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+        object-position: center;
+        margin-top: 1px;
+      }
+      .education-entry-copy {
+        min-width: 0;
+      }
+      .education-records {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 32px;
+      }
+      .course-list {
+        list-style: none;
+        padding: 0;
+        margin: 16px 0;
+      }
+      .course-list li {
+        display: flex;
+        gap: 8px;
+        padding: 7px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .course-code {
+        color: var(--accent);
+        font:
+          500 0.72rem "DM Mono",
+          monospace;
+        white-space: nowrap;
+      }
+      .course-term {
+        color: var(--accent);
+        font:
+          600 0.72rem "DM Mono",
+          monospace;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .course-disclaimer {
+        margin: 12px 0;
+        color: var(--muted);
+        font-size: 0.84rem;
+        font-style: italic;
+      }
+      .record-links {
+        display: grid;
+        gap: 9px;
+      }
+      .record-placeholder {
+        display: block;
+        padding: 11px 12px;
+        border: 1px dashed var(--line);
+        border-radius: 10px;
+        color: #000047;
+        font-size: 0.86rem;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease,
+          background-color 0.2s ease;
+      }
+      a.record-placeholder:hover,
+      a.record-placeholder:focus-visible {
+        background: #edf7ff;
+        border-color: var(--accent);
+        box-shadow:
+          0 0 0 4px rgba(92, 182, 255, 0.18),
+          0 0 18px rgba(92, 182, 255, 0.42);
+        transform: translateY(-2px);
+        outline: none;
+      }
+      .journey-photo-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        margin-top: 28px;
+      }
+      .journey-photo-item {
+        position: relative;
+        padding-top: 18px;
+      }
+      .journey-photo-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--accent);
+      }
+      .journey-photo-item img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 12px;
+        margin-bottom: 12px;
+      }
+      .journey-photo-item h3 {
+        margin: 4px 0 7px;
+      }
+      .journey-photo-item .slideshow {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+        margin: 0 0 12px;
+        border-radius: 12px;
+      }
+      .journey-photo-item .slideshow .slide {
+        min-height: 0;
+        height: 100%;
+        padding: 0;
+      }
+      .journey-photo-item .slideshow .slide img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0;
+        margin: 0;
+      }
+      .drive-photo {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 8;
+        object-fit: cover;
+        object-position: center;
+        margin: 0 0 16px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+      }
+      .drives-section {
+        background:
+          linear-gradient(135deg, rgba(97, 181, 246, 0.16), transparent 58%),
+          var(--surface) !important;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .profile-section {
+        background:
+          linear-gradient(135deg, rgba(97, 181, 246, 0.12), transparent 55%),
+          var(--bg) !important;
+        color: var(--text);
+        border-bottom: 1px solid var(--line);
+      }
+      .profile-section table {
+        box-shadow: 0 18px 40px rgba(0, 0, 71, 0.16);
+      }
+      .education-section {
+        background:
+          linear-gradient(135deg, rgba(97, 181, 246, 0.12), transparent 60%),
+          var(--surface) !important;
+        border-bottom: 1px solid var(--line);
+      }
+      .beyond-section {
+        border-top: 1px solid rgba(97, 181, 246, 0.45);
+      }
+      [data-theme="light"] .profile-section {
+        background:
+          linear-gradient(135deg, rgba(97, 181, 246, 0.2), transparent 58%),
+          #eaf4ff !important;
+        color: var(--ink);
+      }
+      @media (max-width: 760px) {
+        .education-records,
+        .journey-photo-grid {
+          grid-template-columns: 1fr;
+        }
+        .timeline .education-entry {
+          gap: 12px;
+        }
+        .education-logo {
+          flex-basis: 42px;
+          width: 42px;
+          height: 42px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav"><div class="shell nav-inner"></div></header>
+    <main>
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow">About</p>
+          <h1>More than a <span class="accent">resume.</span></h1>
+          <div class="grid two">
+            <article class="card about-copy">
+              <h3>Who I am</h3>
+              <p>
+                Actuarial Science undergraduate at Universiti Teknologi MARA
+                (UiTM) with a strong interest in financial analytics, fintech,
+                risk management, and AI-driven solutions. Leveraging a solid
+                foundation in statistics, financial mathematics, predictive
+                modelling, and risk analysis, I am passionate about transforming
+                data into actionable insights and business value.
+              </p>
+
+              <p>
+                Beyond academics, I actively engage in leadership, volunteering,
+                innovation projects, international programmes, and professional
+                development opportunities, which have strengthened my
+                analytical, project management, teamwork, and communication
+                skills.
+              </p>
+              <p>
+                My current focus areas include data analytics, business
+                intelligence, financial risk analysis, insurance and IFRS 17, AI
+                applications, and cloud technologies. I aspire to build a career
+                at the intersection of finance, data, technology, and risk,
+                contributing to the growth of innovative and data-driven
+                financial services.
+              </p>
+            </article>
+            <article class="card polaroid-card">
+              <div
+                class="slideshow about-polaroid"
+                data-slideshow
+                style="margin: 0 auto; max-width: 320px; min-height: 430px"
+              >
+                <div class="slide active">
+                  <img
+                    src="assets/personal/professional-portrait.jpeg"
+                    alt="Nouryn Eryssa in a blazer"
+                    style="height: 430px; object-position: center"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/personal/professional-phone-1.jpeg"
+                    alt="Nouryn Eryssa in a blazer"
+                    style="height: 430px; object-position: center"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/personal/professional-phone-2.jpeg"
+                    alt="Nouryn Eryssa in a blazer"
+                    style="height: 430px; object-position: center"
+                  />
+                </div>
+                <div class="slide-controls">
+                  <button data-prev aria-label="Previous blazer photo">←</button
+                  ><button data-next aria-label="Next blazer photo">→</button>
+                </div>
+                <p class="about-polaroid-caption">Professional moments</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section alt drives-section">
+        <div class="shell">
+          <p class="eyebrow">What drives me</p>
+          <h2>A student of <span class="accent">everything.</span></h2>
+          <div class="grid">
+            <article class="card">
+              <img
+                class="drive-photo"
+                src="assets/about-drives/analytical-curiosity.jpeg"
+                alt="RStudio practice and statistical analysis"
+              />
+              <h3>Making sense of complexity</h3>
+              <p>
+                I enjoy turning numbers, uncertainty and real-world scenarios
+                into structured insights that can support better decisions and
+                understanding.
+              </p>
+            </article>
+            <article class="card">
+              <img
+                class="drive-photo"
+                src="assets/about-drives/community.jpeg"
+                alt="Community of peers at an event"
+              />
+              <h3>Building with people</h3>
+              <p>
+                Leadership, volunteering, and community engagement drive me
+                because meaningful relationships broaden my perspectives, deepen
+                my understanding of the world, and help me grow into a more
+                thoughtful and empathetic individual.
+              </p>
+            </article>
+            <article class="card">
+              <img
+                class="drive-photo"
+                src="assets/about-drives/purpose.jpeg"
+                alt="Planning and coordinating a community programme"
+              />
+              <h3>Driven by purpose</h3>
+              <p>
+                I have never been one to sit still for long. Whether through
+                leadership, volunteering, projects, or new challenges, I am
+                energised by opportunities to contribute, create value, and make
+                the most of every experience.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section alt profile-section">
+        <div class="shell">
+          <p class="eyebrow">My profile</p>
+          <table>
+            <tr>
+              <th>Academic Focus</th>
+              <td>
+                Actuarial Science, Statistics, Financial Mathematics and Risk
+                Management
+              </td>
+            </tr>
+            <tr>
+              <th>Technology Focus</th>
+              <td>
+                Data Analytics, Business Intelligence, AI-Assisted Development
+                and Cloud Fundamentals
+              </td>
+            </tr>
+            <tr>
+              <th>Beyond Academics</th>
+              <td>
+                Leadership, Entrepreneurship, Event Management, Volunteering and
+                Innovation Projects
+              </td>
+            </tr>
+            <tr>
+              <th>Goals</th>
+              <td>
+                Build a career where finance, data, technology and risk meet,
+                especially in FinTech and data-driven financial services.
+              </td>
+            </tr>
+            <tr>
+              <th>Hope</th>
+              <td>
+                Contribute thoughtfully while learning from ambitious teams and
+                meaningful problems.
+              </td>
+            </tr>
+            <!-- testtttt -->
+          </table>
+        </div>
+      </section>
+      <section class="section alt education-section">
+        <div class="shell">
+          <p class="eyebrow">Education journey</p>
+          <div class="timeline">
+            <article class="education-entry">
+              <img
+                class="education-logo"
+                src="assets/education/logos/uitm-logo.png"
+                alt="Universiti Teknologi MARA logo"
+              />
+              <div class="education-entry-copy">
+                <h3>
+                  Bachelor of Actuarial Science (Hons.), Universiti Teknologi
+                  MARA (UiTM)
+                </h3>
+                <p>Sep 2025–Present · CGPA 3.87 · Dean’s List</p>
+                <a class="education-detail-link" href="#uitm-records"
+                  >View courses &amp; performance →</a
+                >
+              </div>
+            </article>
+            <article class="education-entry">
+              <img
+                class="education-logo"
+                src="assets/education/logos/um-logo.png"
+                alt="University of Malaya logo"
+              />
+              <div class="education-entry-copy">
+                <h3>
+                  Foundation in Social Sciences, University of Malaya (UM)
+                </h3>
+                <p>Jul 2024–Jul 2025 · CGPA 4.00 · MUET Band 4.5</p>
+                <a class="education-detail-link" href="#foundation-records"
+                  >View courses &amp; performance →</a
+                >
+              </div>
+            </article>
+            <article class="education-entry">
+              <img
+                class="education-logo"
+                src="assets/education/logos/kisas-logo.png"
+                alt="Kolej Islam Sultan Alam Shah logo"
+              />
+              <div class="education-entry-copy">
+                <h3>SPM, Kolej Islam Sultan Alam Shah</h3>
+                <p>2022–2023 · 5A+ 4A 2A−</p>
+                <a class="education-detail-link" href="#spm-records"
+                  >View courses &amp; performance →</a
+                >
+              </div>
+            </article>
+          </div>
+          <div class="education-records">
+            <article class="card" id="uitm-records">
+              <p class="kicker">Degree · courses &amp; performance</p>
+              <h3>Bachelor of Actuarial Science (Hons.)</h3>
+              <p class="course-disclaimer">
+                Only IFoA-accredited or exemption-related subjects are shown
+                here.
+              </p>
+              <ul class="course-list">
+                <li><span class="course-term">Semester 1</span></li>
+                <li>
+                  <span class="course-code">STA451</span
+                  ><span>Probability and Mathematical Statistics</span>
+                </li>
+                <li>
+                  <span class="course-code">ASC400</span
+                  ><span
+                    >Principles of Risk Management, Insurance and Takaful</span
+                  >
+                </li>
+                <li><span class="course-term">Semester 2</span></li>
+                <li>
+                  <span class="course-code">STA472</span
+                  ><span>Data Analysis and Statistical Inference</span>
+                </li>
+                <li>
+                  <span class="course-code">ASC453</span
+                  ><span>Financial Mathematics</span>
+                </li>
+                <li>
+                  <span class="course-code">ACC466</span
+                  ><span>Financial and Management Accounting</span>
+                </li>
+                <li>
+                  <span class="course-code">ECO410</span
+                  ><span>Microeconomics</span>
+                </li>
+              </ul>
+              <a
+                class="record-placeholder"
+                href="assets/education/uitm-semester-1-performance-record.pdf"
+                target="_blank"
+                rel="noopener"
+                download="Nouryn-Eryssa-UiTM-Semester-1-Performance-Record.pdf"
+                >Open UiTM Semester 1 performance record (PDF) ↓</a
+              >
+            </article>
+            <article class="card" id="foundation-records">
+              <p class="kicker">Foundation · courses &amp; performance</p>
+              <h3>Foundation in Social Sciences</h3>
+              <ul class="course-list">
+                <li><span class="course-term">Semester 1</span></li>
+                <li>
+                  <span class="course-code">FAG1001</span
+                  ><span>Thinking Skills</span>
+                </li>
+                <li>
+                  <span class="course-code">FAG1002</span><span>English 1</span>
+                </li>
+                <li>
+                  <span class="course-code">FAG1003</span
+                  ><span
+                    >Basic Information and Communication Technology (ICT)</span
+                  >
+                </li>
+                <li>
+                  <span class="course-code">FAG1004</span
+                  ><span>Mathematics</span>
+                </li>
+                <li>
+                  <span class="course-code">FAG1007</span
+                  ><span>Fundamentals of Management</span>
+                </li>
+                <li>
+                  <span class="course-code">FAG1008</span
+                  ><span>Principles of Economics</span>
+                </li>
+                <li>
+                  <span class="course-code">FAG1009</span
+                  ><span>Introduction to Law</span>
+                </li>
+                <li><span class="course-term">Semester 2</span></li>
+                <li>
+                  <span class="course-code">FAG1005</span><span>English 2</span>
+                </li>
+                <li>
+                  <span class="course-code">FAG1006</span
+                  ><span>Co-curriculum</span>
+                </li>
+                <li>
+                  <span class="course-code">FAG1010</span
+                  ><span>Financial Accounting</span>
+                </li>
+                <li>
+                  <span class="course-code">FAG1011</span
+                  ><span>Principles of Marketing</span>
+                </li>
+                <li>
+                  <span class="course-code">FAG1012</span
+                  ><span>Management Accounting</span>
+                </li>
+                <li>
+                  <span class="course-code">FAG1016</span
+                  ><span>Introduction to Finance</span>
+                </li>
+                <li>
+                  <span class="course-code">FAG1019</span
+                  ><span>Legal Skills</span>
+                </li>
+              </ul>
+              <div class="record-links">
+                <a
+                  class="record-placeholder"
+                  href="assets/education/um-performance-record.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  download="Nouryn-Eryssa-Foundation-Performance-Record.pdf"
+                  >Open Foundation performance record (PDF) ↓</a
+                ><a
+                  class="record-placeholder"
+                  href="assets/education/muet-result.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  download="Nouryn-Eryssa-MUET-Result.pdf"
+                  >Open MUET result (PDF) ↓</a
+                >
+              </div>
+            </article>
+            <article class="card" id="spm-records">
+              <p class="kicker">SPM · courses &amp; performance</p>
+              <h3>Kolej Islam Sultan Alam Shah</h3>
+              <ul class="course-list">
+                <li>
+                  <span class="course-code">3756</span
+                  ><span>Accounting Principles</span>
+                </li>
+                <li>
+                  <span class="course-code">3767</span><span>Economics</span>
+                </li>
+                <li>
+                  <span class="course-code">3472</span
+                  ><span>Additional Mathematics</span>
+                </li>
+                <li>
+                  <span class="course-code">1449</span><span>Mathematics</span>
+                </li>
+                <li>
+                  <span class="course-code">5227</span
+                  ><span>Al-Quran Al-Sunnah Studies</span>
+                </li>
+                <li>
+                  <span class="course-code">5228</span
+                  ><span>Syariah Islamiah Studies</span>
+                </li>
+                <li>
+                  <span class="course-code">2361</span
+                  ><span>Arabic Language</span>
+                </li>
+                <li>
+                  <span class="course-code">1103</span
+                  ><span>Malay Language</span>
+                </li>
+                <li>
+                  <span class="course-code">1119</span
+                  ><span>English Language</span>
+                </li>
+                <li>
+                  <span class="course-code">1511</span><span>Science</span>
+                </li>
+                <li>
+                  <span class="course-code">1249</span><span>History</span>
+                </li>
+              </ul>
+              <a
+                class="record-placeholder"
+                href="assets/education/spm-performance-record.pdf"
+                target="_blank"
+                rel="noopener"
+                download="Nouryn-Eryssa-SPM-Performance-Record.pdf"
+                >Open SPM performance record (PDF) ↓</a
+              >
+            </article>
+          </div>
+          <div class="grid education-gallery" style="margin-top: 38px">
+            <article class="card">
+              <p class="kicker">Degree at UiTM moments</p>
+              <div class="slideshow" data-slideshow>
+                <div class="slide active">
+                  <img
+                    src="assets/education/uitm-new1.jpeg"
+                    alt="UiTM moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/uitm-new2.jpeg"
+                    alt="UiTM moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/uitm-new3.jpeg"
+                    alt="UiTM moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/uitm-new4.jpeg"
+                    alt="UiTM moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/uitm-new5.jpeg"
+                    alt="UiTM moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/uitm-new6.jpeg"
+                    alt="UiTM moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/uitm-new7.jpeg"
+                    alt="UiTM moment"
+                  />
+                </div>
+                <div class="slide-controls">
+                  <button data-prev aria-label="Previous UiTM photo">←</button
+                  ><button data-next aria-label="Next UiTM photo">→</button>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <p class="kicker">Foundation at UM moments</p>
+              <div class="slideshow" data-slideshow>
+                <div class="slide active">
+                  <img
+                    src="assets/education/um-new1.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new2.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new3.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new4.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new5.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new6.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new7.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new8.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new9.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new10.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new11.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new12.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/um-new13.jpeg"
+                    alt="University of Malaya moment"
+                  />
+                </div>
+                <div class="slide-controls">
+                  <button data-prev aria-label="Previous UM photo">←</button
+                  ><button data-next aria-label="Next UM photo">→</button>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <p class="kicker">SPM at KISAS moments</p>
+              <div class="slideshow" data-slideshow>
+                <div class="slide active">
+                  <img
+                    src="assets/education/kisas1.jpeg"
+                    alt="KISAS school moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/kisas2.jpeg"
+                    alt="KISAS school moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/kisas3.jpeg"
+                    alt="KISAS school moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/kisas4.jpeg"
+                    alt="KISAS school moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/kisas5.jpeg"
+                    alt="KISAS school moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/kisas6.jpeg"
+                    alt="KISAS school moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/kisas7.jpeg"
+                    alt="KISAS school moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/education/kisas8.jpeg"
+                    alt="KISAS school moment"
+                  />
+                </div>
+                <div class="slide-controls">
+                  <button data-prev aria-label="Previous SPM photo">←</button
+                  ><button data-next aria-label="Next SPM photo">→</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section beyond-section">
+        <div class="shell">
+          <p class="eyebrow">Beyond the resume</p>
+          <h2>My <span class="accent">journey.</span></h2>
+          <p class="intro">
+            The experiences that have influenced how I think, connect, and grow.
+            From community involvement to creative pursuits, each chapter has
+            expanded my perspective in a different way.
+          </p>
+          <div class="journey-photo-grid">
+            <article class="journey-photo-item">
+              <div class="slideshow" data-slideshow>
+                <div class="slide active">
+                  <img
+                    src="assets/journey/community/community-1.jpeg"
+                    alt="Community event involvement"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/community/community-2.jpeg"
+                    alt="Community with friends and peers"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/community/community-3.jpeg"
+                    alt="Committee and leadership moment"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/community/community-4.jpeg"
+                    alt="Community sustainability activity"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/community/community-5.jpeg"
+                    alt="Community gathering"
+                  />
+                </div>
+                <div class="slide-controls">
+                  <button data-prev aria-label="Previous community photo">
+                    ←
+                  </button>
+                  <button data-next aria-label="Next community photo">→</button>
+                </div>
+              </div>
+              <p class="kicker">Community</p>
+              <h3>Growing through service</h3>
+            </article>
+            <article class="journey-photo-item">
+              <div class="slideshow" data-slideshow>
+                <div class="slide active">
+                  <img
+                    src="assets/journey/leadership/leadership-1.jpeg"
+                    alt="Leadership and community programme team"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/leadership/leadership-2.jpeg"
+                    alt="Collaborating with a leadership team"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/leadership/leadership-3.jpeg"
+                    alt="Leadership committee portrait"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/leadership/leadership-4.jpeg"
+                    alt="Early leadership moment with friends"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/leadership/leadership-5.jpeg"
+                    alt="Leadership experience at school"
+                  />
+                </div>
+                <div class="slide-controls">
+                  <button data-prev aria-label="Previous leadership photo">
+                    ←
+                  </button>
+                  <button data-next aria-label="Next leadership photo">
+                    →
+                  </button>
+                </div>
+              </div>
+              <p class="kicker">Leadership</p>
+              <h3>Bringing ideas to life</h3>
+            </article>
+            <article class="journey-photo-item">
+              <div class="slideshow" data-slideshow>
+                <div class="slide active">
+                  <img
+                    src="assets/journey/creativity/creativity-1.jpeg"
+                    alt="Photography creative practice"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/creativity/creativity-2.jpeg"
+                    alt="Handmade faux flower creation"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/creativity/creativity-3.jpeg"
+                    alt="Creative project workspace"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/creativity/creativity-4.jpeg"
+                    alt="Speaking at a creative event"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="assets/journey/creativity/creativity-5.jpeg"
+                    alt="Creative event audience"
+                  />
+                </div>
+                <div class="slide-controls">
+                  <button data-prev aria-label="Previous creativity photo">
+                    ←
+                  </button>
+                  <button data-next aria-label="Next creativity photo">
+                    →
+                  </button>
+                </div>
+              </div>
+              <p class="kicker">Creativity</p>
+              <h3>Making things meaningful</h3>
+            </article>
+            <article class="journey-photo-item">
+              <img
+                src="assets/personal/ifoa-event.jpeg"
+                alt="Nouryn at an actuarial event"
+              />
+              <p class="kicker">Present</p>
+              <h3>Still exploring what's next</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell footer-inner"><span>© 2026 Nouryn Eryssa</span></div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
