@@ -19,19 +19,51 @@
         margin-right: auto !important;
         padding: 14px 14px 48px;
         background: #fff;
-        border: 1px solid rgba(92, 182, 255, .58);
+        border: 1px solid rgba(92, 182, 255, 0.58);
         border-radius: 7px;
-        box-shadow: 13px 15px 0 rgba(0, 0, 71, .14), 0 18px 36px rgba(0, 0, 71, .22);
-        transform: rotate(-.8deg);
+        box-shadow:
+          13px 15px 0 rgba(0, 0, 71, 0.14),
+          0 18px 36px rgba(0, 0, 71, 0.22);
+        transform: rotate(-0.8deg);
         overflow: visible;
       }
-      .about-polaroid .slide { min-height: 0; height: 360px; padding: 0; }
-      .about-polaroid .slide.active { display: block; }
-      .about-polaroid .slide img { display: block; width: 100%; height: 360px !important; object-fit: cover; object-position: center; }
-      .about-polaroid .slide-controls { right: 11px; bottom: 10px; }
-      .about-polaroid .slide-controls button { background: #000047; }
-      .about-polaroid-caption { position: absolute; left: 16px; bottom: 16px; margin: 0; color: #000047; font: 600 .74rem "DM Mono", monospace; }
-      .polaroid-card { display: flex; align-items: center; justify-content: center; }
+      .about-polaroid .slide {
+        min-height: 0;
+        height: 360px;
+        padding: 0;
+      }
+      .about-polaroid .slide.active {
+        display: block;
+      }
+      .about-polaroid .slide img {
+        display: block;
+        width: 100%;
+        height: 360px !important;
+        object-fit: cover;
+        object-position: center;
+      }
+      .about-polaroid .slide-controls {
+        right: 11px;
+        bottom: 10px;
+      }
+      .about-polaroid .slide-controls button {
+        background: #000047;
+      }
+      .about-polaroid-caption {
+        position: absolute;
+        left: 16px;
+        bottom: 16px;
+        margin: 0;
+        color: #000047;
+        font:
+          600 0.74rem "DM Mono",
+          monospace;
+      }
+      .polaroid-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       .education-gallery .slideshow {
         min-height: 0 !important;
         aspect-ratio: 16 / 9;
@@ -324,97 +356,6 @@
               </div>
             </article>
           </div>
-        </div>
-      </section>
-      <section class="section alt drives-section">
-        <div class="shell">
-          <p class="eyebrow">What drives me</p>
-          <h2>A student of <span class="accent">everything.</span></h2>
-          <div class="grid">
-            <article class="card">
-              <img
-                class="drive-photo"
-                src="assets/about-drives/analytical-curiosity.jpeg"
-                alt="RStudio practice and statistical analysis"
-              />
-              <h3>Making sense of complexity</h3>
-              <p>
-                I enjoy turning numbers, uncertainty and real-world scenarios
-                into structured insights that can support better decisions and
-                understanding.
-              </p>
-            </article>
-            <article class="card">
-              <img
-                class="drive-photo"
-                src="assets/about-drives/community.jpeg"
-                alt="Community of peers at an event"
-              />
-              <h3>Building with people</h3>
-              <p>
-                Leadership, volunteering, and community engagement drive me
-                because meaningful relationships broaden my perspectives, deepen
-                my understanding of the world, and help me grow into a more
-                thoughtful and empathetic individual.
-              </p>
-            </article>
-            <article class="card">
-              <img
-                class="drive-photo"
-                src="assets/about-drives/purpose.jpeg"
-                alt="Planning and coordinating a community programme"
-              />
-              <h3>Driven by purpose</h3>
-              <p>
-                I have never been one to sit still for long. Whether through
-                leadership, volunteering, projects, or new challenges, I am
-                energised by opportunities to contribute, create value, and make
-                the most of every experience.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-      <section class="section alt profile-section">
-        <div class="shell">
-          <p class="eyebrow">My profile</p>
-          <table>
-            <tr>
-              <th>Academic Focus</th>
-              <td>
-                Actuarial Science, Statistics, Financial Mathematics and Risk
-                Management
-              </td>
-            </tr>
-            <tr>
-              <th>Technology Focus</th>
-              <td>
-                Data Analytics, Business Intelligence, AI-Assisted Development
-                and Cloud Fundamentals
-              </td>
-            </tr>
-            <tr>
-              <th>Beyond Academics</th>
-              <td>
-                Leadership, Entrepreneurship, Event Management, Volunteering and
-                Innovation Projects
-              </td>
-            </tr>
-            <tr>
-              <th>Goals</th>
-              <td>
-                Build a career where finance, data, technology and risk meet,
-                especially in FinTech and data-driven financial services.
-              </td>
-            </tr>
-            <tr>
-              <th>Hope</th>
-              <td>
-                Contribute thoughtfully while learning from ambitious teams and
-                meaningful problems.
-              </td>
-            </tr>
-          </table>
         </div>
       </section>
       <section class="section alt education-section">
@@ -851,72 +792,15 @@
           </div>
         </div>
       </section>
-      <section class="section beyond-section">
-        <div class="shell">
-          <p class="eyebrow">Beyond the resume</p>
-          <h2>My <span class="accent">journey.</span></h2>
-          <p class="intro">
-            The experiences that have influenced how I think, connect, and grow.
-            From community involvement to creative pursuits, each chapter has
-            expanded my perspective in a different way.
-          </p>
-          <div class="journey-photo-grid">
-            <article class="journey-photo-item">
-              <div class="slideshow" data-slideshow>
-                <div class="slide active"><img src="assets/journey/community/community-1.jpeg" alt="Community event involvement" /></div>
-                <div class="slide"><img src="assets/journey/community/community-2.jpeg" alt="Community with friends and peers" /></div>
-                <div class="slide"><img src="assets/journey/community/community-3.jpeg" alt="Committee and leadership moment" /></div>
-                <div class="slide"><img src="assets/journey/community/community-4.jpeg" alt="Community sustainability activity" /></div>
-                <div class="slide"><img src="assets/journey/community/community-5.jpeg" alt="Community gathering" /></div>
-                <div class="slide-controls">
-                  <button data-prev aria-label="Previous community photo">←</button>
-                  <button data-next aria-label="Next community photo">→</button>
-                </div>
-              </div>
-              <p class="kicker">Community</p>
-              <h3>Growing through service</h3>
-            </article>
-            <article class="journey-photo-item">
-              <div class="slideshow" data-slideshow>
-                <div class="slide active"><img src="assets/journey/leadership/leadership-1.jpeg" alt="Leadership and community programme team" /></div>
-                <div class="slide"><img src="assets/journey/leadership/leadership-2.jpeg" alt="Collaborating with a leadership team" /></div>
-                <div class="slide"><img src="assets/journey/leadership/leadership-3.jpeg" alt="Leadership committee portrait" /></div>
-                <div class="slide"><img src="assets/journey/leadership/leadership-4.jpeg" alt="Early leadership moment with friends" /></div>
-                <div class="slide"><img src="assets/journey/leadership/leadership-5.jpeg" alt="Leadership experience at school" /></div>
-                <div class="slide-controls">
-                  <button data-prev aria-label="Previous leadership photo">←</button>
-                  <button data-next aria-label="Next leadership photo">→</button>
-                </div>
-              </div>
-              <p class="kicker">Leadership</p>
-              <h3>Bringing ideas to life</h3>
-            </article>
-            <article class="journey-photo-item">
-              <div class="slideshow" data-slideshow>
-                <div class="slide active"><img src="assets/journey/creativity/creativity-1.jpeg" alt="Photography creative practice" /></div>
-                <div class="slide"><img src="assets/journey/creativity/creativity-2.jpeg" alt="Handmade faux flower creation" /></div>
-                <div class="slide"><img src="assets/journey/creativity/creativity-3.jpeg" alt="Creative project workspace" /></div>
-                <div class="slide"><img src="assets/journey/creativity/creativity-4.jpeg" alt="Speaking at a creative event" /></div>
-                <div class="slide"><img src="assets/journey/creativity/creativity-5.jpeg" alt="Creative event audience" /></div>
-                <div class="slide-controls">
-                  <button data-prev aria-label="Previous creativity photo">←</button>
-                  <button data-next aria-label="Next creativity photo">→</button>
-                </div>
-              </div>
-              <p class="kicker">Creativity</p>
-              <h3>Making things meaningful</h3>
-            </article>
-            <article class="journey-photo-item">
-              <img
-                src="assets/personal/ifoa-event.jpeg"
-                alt="Nouryn at an actuarial event"
-              />
-              <p class="kicker">Present</p>
-              <h3>Still exploring what's next</h3>
-            </article>
-          </div>
-        </div>
-      </section>
+      <div class="moved-page-section achievements-theme" id="achievements">
+        <div class="shell" data-page-include="achievements.html"></div>
+      </div>
+      <div class="moved-page-section experience-theme" id="experience">
+        <div class="shell" data-page-include="experience.html"></div>
+      </div>
+      <div class="moved-page-section events-theme" id="events">
+        <div class="shell" data-page-include="events.html"></div>
+      </div>
     </main>
     <footer class="footer">
       <div class="shell footer-inner"><span>© 2026 Nouryn Eryssa</span></div>

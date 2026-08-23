@@ -9,10 +9,7 @@
     nav.innerHTML = `<a class="brand" href="index.html"><img src="assets/logo-transparent.png" alt="Nouryn Eryssa logo">Nouryn <span>Eryssa</span></a><nav class="links">${[
       ["index.html", "Home"],
       ["about.html", "About"],
-      ["experience.html", "Experience"],
       ["projects.html", "Projects"],
-      ["achievements.html", "Achievements"],
-      ["events.html", "Events"],
       ["skills.html", "Skills"],
       ["certifications.html", "Certifications"],
       ["contact.html", "Contact"],
@@ -23,7 +20,27 @@
       )
       .join(
         "",
-      )}</nav><button class="theme-toggle" data-theme-toggle>☾ Dark</button>`;
+      )}</nav><button class="menu-toggle" data-menu-toggle type="button" aria-label="Open navigation menu" aria-expanded="false" title="Open navigation menu"><span></span><span></span><span></span></button><button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch to light mode" title="Switch to light mode">☾ Dark</button>`;
+  document.querySelectorAll("[data-page-include]").forEach(async (target) => {
+    try {
+      const response = await fetch(target.dataset.pageInclude);
+      if (!response.ok)
+        throw new Error(`Unable to load ${target.dataset.pageInclude}`);
+      const pageDocument = new DOMParser().parseFromString(
+        await response.text(),
+        "text/html",
+      );
+      pageDocument.querySelectorAll("head style").forEach((style) => {
+        const embeddedStyle = document.createElement("style");
+        embeddedStyle.textContent = style.textContent;
+        document.head.append(embeddedStyle);
+      });
+      target.replaceChildren(...pageDocument.querySelector("main").children);
+    } catch (error) {
+      target.textContent = "This section could not be loaded.";
+      console.error(error);
+    }
+  });
   const photos = [
     "professional-portrait.jpeg",
     "ifoa-event.jpeg",
@@ -49,7 +66,31 @@
       t === "light" ? "☾ Dark" : "☀ Light";
   };
   set(localStorage.getItem("portfolio-theme") || "dark");
+  const menuToggle = document.querySelector("[data-menu-toggle]"),
+    links = document.querySelector(".links"),
+    closeMenu = () => {
+      links?.classList.remove("is-open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      menuToggle?.setAttribute("aria-label", "Open navigation menu");
+      menuToggle?.setAttribute("title", "Open navigation menu");
+    };
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = links?.classList.toggle("is-open") ?? false;
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation menu" : "Open navigation menu",
+    );
+    menuToggle.setAttribute(
+      "title",
+      isOpen ? "Close navigation menu" : "Open navigation menu",
+    );
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
   document.addEventListener("click", (e) => {
+    if (e.target.closest(".links a")) closeMenu();
     if (e.target.closest("[data-theme-toggle]"))
       set(
         document.documentElement.dataset.theme === "light" ? "dark" : "light",
