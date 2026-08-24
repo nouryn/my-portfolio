@@ -103,8 +103,7 @@
         }
       }
       .button,
-      .slide-controls button,
-      [data-top] {
+      .slide-controls button {
         transition:
           transform 0.2s ease,
           box-shadow 0.2s ease,
@@ -114,9 +113,7 @@
       .button:hover,
       .button:focus-visible,
       .slide-controls button:hover,
-      .slide-controls button:focus-visible,
-      [data-top]:hover,
-      [data-top]:focus-visible {
+      .slide-controls button:focus-visible {
         background: #edf7ff;
         color: #000047;
         border-color: var(--accent);
@@ -326,7 +323,17 @@
           </div>
         </div>
       </section>
-      <section class="section alt skill-showcase">
+      <nav class="section-tabs" aria-label="Portfolio sections">
+        <div class="shell section-tabs-inner">
+          <div class="section-tabs-links">
+            <a href="#skills">Skills</a>
+            <a href="#innovation">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#professional-development">Courses</a>
+          </div>
+        </div>
+      </nav>
+      <section class="section alt skill-showcase" id="skills">
         <div class="shell">
           <p class="eyebrow">Skills</p>
           <h2>Data-minded. <span class="accent">Business-ready.</span></h2>
@@ -334,7 +341,7 @@
             <article class="card">
               <h3>Analytics & BI</h3>
               <p>
-                Microsoft Excel, Power Query, Power BI, SQL, SAP Analytics
+                Microsoft Excel, Power Query, Power BI, Tableau, SAP Analytics
                 Cloud.
               </p>
               <div class="skill-marquee" aria-label="Analytics tools">
@@ -342,20 +349,24 @@
                   <div class="skill-marquee-set">
                     <img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/mysql"
-                      alt="Excel"
+                      src="assets/skill-logos/excel.svg"
+                      alt="Microsoft Excel"
                     /><img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/r"
-                      alt="Power BI"
+                      src="assets/skill-logos/power-query.svg"
+                      alt="Microsoft Power Query"
                     /><img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/github"
-                      alt="Microsoft"
+                      src="assets/skill-logos/power-bi.svg"
+                      alt="Microsoft Power BI"
                     /><img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/insomnia"
-                      alt="Data visualisation"
+                      src="assets/skill-logos/tableau.svg"
+                      alt="Tableau"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/sap.svg"
+                      alt="SAP Analytics Cloud"
                     />
                   </div>
                 </div>
@@ -372,23 +383,39 @@
                   <div class="skill-marquee-set">
                     <img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/python"
+                      src="assets/skill-logos/python.svg"
                       alt="Python"
                     /><img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/r"
+                      src="assets/skill-logos/r.svg"
                       alt="R"
                     /><img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/mysql"
-                      alt="SQL"
+                      src="assets/skill-logos/javascript.svg"
+                      alt="JavaScript"
                     /><img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/react"
+                      src="assets/skill-logos/typescript.svg"
+                      alt="TypeScript"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/cplusplus.svg"
+                      alt="C++"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/html5.svg"
+                      alt="HTML5"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/css.svg"
+                      alt="CSS"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/react.svg"
                       alt="React"
                     /><img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/nodedotjs"
+                      src="assets/skill-logos/nodejs.svg"
                       alt="Node.js"
                     />
                   </div>
@@ -405,34 +432,44 @@
               </article>
               <article class="card">
                 <h3>Accounting software</h3>
-                <p>AutoCount Cloud.</p>
+                <p class="accounting-tool">
+                  <img
+                    class="accounting-logo"
+                    src="assets/skill-logos/autocount-cloud.png"
+                    alt="AutoCount Cloud"
+                  />
+                  <span>AutoCount Cloud.</span>
+                </p>
               </article>
             </div>
             <article class="card">
               <h3>Data & cloud</h3>
               <p>
-                PostgreSQL, Supabase, database design, Git/GitHub and cloud
-                fundamentals.
+                MySQL, PostgreSQL, Supabase, Git/GitHub and cloud fundamentals.
               </p>
               <div class="skill-marquee" aria-label="Data and cloud tools">
                 <div class="skill-marquee-track">
                   <div class="skill-marquee-set">
                     <img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/postgresql"
+                      src="assets/skill-logos/mysql.svg"
+                      alt="MySQL"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/postgresql.svg"
                       alt="PostgreSQL"
                     /><img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/supabase"
+                      src="assets/skill-logos/supabase.svg"
                       alt="Supabase"
                     /><img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/github"
-                      alt="GitHub"
+                      src="assets/skill-logos/git.svg"
+                      alt="Git"
                     /><img
                       class="skill-logo"
-                      src="https://cdn.simpleicons.org/nodedotjs"
-                      alt="Cloud"
+                      src="assets/skill-logos/github.svg"
+                      alt="GitHub"
                     />
                   </div>
                 </div>
@@ -441,9 +478,9 @@
           </div>
         </div>
       </section>
-      <section class="section">
+      <section class="section" id="innovation">
         <div class="shell">
-          <p class="eyebrow" id="innovation">Innovation</p>
+          <p class="eyebrow">Innovation</p>
           <h2>Ideas with a <span class="accent">purpose.</span></h2>
           <p class="intro">
             Technical and entrepreneurial concepts spanning fintech,
@@ -514,7 +551,7 @@
             Analytical work that connects structured data, visual storytelling
             and practical business decisions.
           </p>
-          <div class="grid">
+          <div class="grid project-grid">
             <article class="card">
               <h3>Dashboard development</h3>
               <p>
@@ -573,7 +610,7 @@
             Frontend and full-stack foundations for responsive, data-aware and
             user-focused web products.
           </p>
-          <div class="grid">
+          <div class="grid project-grid">
             <article class="card">
               <h3>Frontend development</h3>
               <p>
@@ -624,7 +661,7 @@
       </section>
       <section class="section certifications-section" id="certifications">
         <div class="shell">
-          <p class="eyebrow">Certifications & professional development</p>
+          <p class="eyebrow">Certifications & Digital Credentials</p>
           <h2>Learning with <span class="accent">evidence.</span></h2>
           <p class="intro">
             A record of completed qualifications, digital credentials and
@@ -680,7 +717,12 @@
         id="professional-development"
       >
         <div class="shell">
-          <p class="eyebrow">Professional development</p>
+          <p class="eyebrow">Courses - Professional Development</p>
+          <h2>Courses built through <span class="accent">practice.</span></h2>
+          <p class="intro">
+            Focused learning across analytics, statistics, cloud tools and
+            modern development workflows.
+          </p>
           <div class="grid">
             <article class="card">
               <h3>Analytics & BI</h3>
@@ -705,7 +747,7 @@
             class="button"
             data-return-target="#professional-development"
             href="development.html"
-            >See more professional development →</a
+            >See more courses →</a
           >
         </div>
       </section>
@@ -726,7 +768,7 @@
     <footer class="footer">
       <div class="shell footer-inner">
         <span>© 2026 Nouryn Eryssa</span
-        ><button data-top class="theme-toggle">Back to top ↑</button>
+        ><button data-top class="back-to-top">Back to top ↑</button>
       </div>
     </footer>
     <script src="script.js"></script>

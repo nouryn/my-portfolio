@@ -419,6 +419,84 @@ h3 {
   position: relative;
   padding: clamp(24px, 3vw, 48px) 0;
 }
+.section-tabs {
+  position: sticky;
+  top: 86px;
+  z-index: 15;
+  padding: 12px 0;
+  background: transparent;
+  pointer-events: none;
+}
+.section-tabs-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  max-width: calc(100% - 30px);
+  padding: 7px;
+  border-radius: 999px;
+  background: rgba(0, 0, 45, 0.9);
+  box-shadow:
+    0 10px 26px rgba(0, 0, 71, 0.34),
+    0 0 0 1px rgba(85, 184, 255, 0.34),
+    0 0 28px rgba(85, 184, 255, 0.26);
+  backdrop-filter: blur(16px);
+  pointer-events: auto;
+}
+.section-tabs-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.section-tabs-links a {
+  padding: 10px 17px;
+  color: var(--paper);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font: 600 0.7rem "DM Mono", monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    color 0.22s ease,
+    background-color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+.section-tabs-links a:hover,
+.section-tabs-links a:focus-visible {
+  color: var(--navy-deep);
+  background: var(--blue);
+  box-shadow:
+    0 0 0 3px rgba(85, 184, 255, 0.2),
+    0 0 20px rgba(85, 184, 255, 0.58);
+  transform: translateY(-1px);
+}
+.section-tabs-links a:active {
+  transform: translateY(1px);
+}
+[data-theme="light"] .section-tabs-inner {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 71, 0.16),
+    0 0 0 1px rgba(8, 118, 201, 0.2),
+    0 0 26px rgba(8, 118, 201, 0.2);
+}
+[data-theme="light"] .section-tabs-links a {
+  color: var(--ink);
+  background: rgba(8, 118, 201, 0.09);
+}
+[data-theme="light"] .section-tabs-links a:hover,
+[data-theme="light"] .section-tabs-links a:focus-visible {
+  color: var(--paper);
+  background: var(--blue-deep);
+}
+#skills,
+#innovation,
+#certifications,
+#professional-development {
+  scroll-margin-top: 154px;
+}
 .section.alt {
   color: var(--ink);
   background: var(--surface-tint);
@@ -432,14 +510,25 @@ h3 {
   height: 9px;
   background: var(--accent);
 }
-.certifications-section,
-.professional-development-section {
+.certifications-section {
   background: var(--surface-tint) !important;
   color: var(--ink);
 }
-.certifications-section .intro,
-.professional-development-section .intro {
+.certifications-section .intro {
   color: #4a6683;
+}
+.professional-development-section {
+  padding-top: clamp(50px, 6vw, 82px);
+  padding-bottom: clamp(62px, 7vw, 96px);
+  background: transparent !important;
+  color: var(--text);
+}
+.professional-development-section .intro {
+  color: var(--muted);
+}
+.professional-development-section .eyebrow,
+.professional-development-section .accent {
+  color: var(--accent);
 }
 .section h1 {
   max-width: 900px;
@@ -515,6 +604,19 @@ h3 {
   border-radius: 3px;
   background: var(--paper);
   object-fit: contain;
+}
+.accounting-tool {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.accounting-logo {
+  display: block;
+  width: 86px;
+  height: 30px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  object-position: left center;
 }
 .skill-marquee:hover .skill-marquee-track,
 .skill-marquee:focus-within .skill-marquee-track {
@@ -651,6 +753,53 @@ h3 {
   justify-content: space-between;
   gap: 15px;
   flex-wrap: wrap;
+}
+.back-to-top {
+  min-height: 40px;
+  padding: 10px 17px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 45, 0.9);
+  color: var(--paper);
+  box-shadow:
+    0 8px 22px rgba(0, 0, 71, 0.3),
+    0 0 0 1px rgba(85, 184, 255, 0.34),
+    0 0 22px rgba(85, 184, 255, 0.25);
+  font: 600 0.7rem/1 "DM Mono", monospace;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 0.22s ease,
+    background-color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  color: var(--navy-deep);
+  background: var(--blue);
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(85, 184, 255, 0.2),
+    0 0 22px rgba(85, 184, 255, 0.58);
+  transform: translateY(-2px);
+}
+.back-to-top:active {
+  transform: translateY(1px);
+}
+[data-theme="light"] .back-to-top {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 71, 0.15),
+    0 0 0 1px rgba(8, 118, 201, 0.2),
+    0 0 20px rgba(8, 118, 201, 0.18);
+}
+[data-theme="light"] .back-to-top:hover,
+[data-theme="light"] .back-to-top:focus-visible {
+  color: var(--paper);
+  background: var(--blue-deep);
 }
 
 .flip-grid {
@@ -1052,6 +1201,32 @@ progress {
   }
   .section {
     padding: 42px 0;
+  }
+  .section-tabs {
+    top: 72px;
+    padding: 9px 0;
+  }
+  .section-tabs-inner {
+    width: calc(100% - 24px);
+    padding: 6px;
+    border-radius: 26px;
+  }
+  .section-tabs-links {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 5px;
+  }
+  .section-tabs-links a {
+    flex: 1 1 calc(50% - 5px);
+    padding: 9px 10px;
+    text-align: center;
+  }
+  #skills,
+  #innovation,
+  #certifications,
+  #professional-development {
+    scroll-margin-top: 180px;
   }
   .section h1 {
     font-size: clamp(3.3rem, 15vw, 5.2rem);
