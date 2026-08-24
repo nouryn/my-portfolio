@@ -127,7 +127,12 @@
     const backHome = e.target.closest("[data-back-home]");
     if (backHome) {
       e.preventDefault();
-      location.href = "index.html";
+      const previousPage = document.referrer
+        ? new URL(document.referrer, location.href)
+        : null;
+      const cameFromSite = previousPage?.origin === location.origin;
+      if (cameFromSite && history.length > 1) history.back();
+      else location.href = "index.html";
       return;
     }
     if (e.target.closest("[data-theme-toggle]"))
