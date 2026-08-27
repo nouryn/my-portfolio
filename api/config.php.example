@@ -1,0 +1,11 @@
+<?php
+// Copy this file to config.php and fill in your own local/hosting credentials.
+// Never commit config.php: it contains secrets.
+return [
+    'host' => '127.0.0.1',
+    'database' => 'nouryn_portfolio',
+    'username' => 'root',
+    'password' => '',
+    // Use a long, unique password before putting the site online.
+    'admin_password' => 'change-this-before-going-live',
+];

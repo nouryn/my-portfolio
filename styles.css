@@ -67,9 +67,22 @@ body::before {
   opacity: 0.92;
   background:
     linear-gradient(135deg, rgba(199, 165, 110, 0.11), transparent 38%),
-    repeating-radial-gradient(circle at 12px 12px, transparent 0 10px, var(--pattern) 10px 11px, transparent 11px 24px),
-    repeating-linear-gradient(45deg, transparent 0 28px, var(--grid-dot) 28px 29px),
-    radial-gradient(ellipse at 50% 0, rgba(204, 106, 118, 0.14), transparent 52%);
+    repeating-radial-gradient(
+      circle at 12px 12px,
+      transparent 0 10px,
+      var(--pattern) 10px 11px,
+      transparent 11px 24px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 28px,
+      var(--grid-dot) 28px 29px
+    ),
+    radial-gradient(
+      ellipse at 50% 0,
+      rgba(204, 106, 118, 0.14),
+      transparent 52%
+    );
   background-size:
     auto,
     86px 86px,
@@ -251,8 +264,12 @@ img {
   border-radius: 42% 58% 48% 52%;
   pointer-events: none;
   transform: rotate(16deg);
-  background:
-    repeating-radial-gradient(circle at 50% 50%, transparent 0 17px, color-mix(in srgb, var(--orchid) 18%, transparent) 17px 18px, transparent 18px 36px);
+  background: repeating-radial-gradient(
+    circle at 50% 50%,
+    transparent 0 17px,
+    color-mix(in srgb, var(--orchid) 18%, transparent) 17px 18px,
+    transparent 18px 36px
+  );
 }
 .hero-grid {
   display: grid;
@@ -464,7 +481,9 @@ h3 {
   color: var(--paper);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
-  font: 600 0.7rem "JetBrains Mono", monospace;
+  font:
+    600 0.7rem "JetBrains Mono",
+    monospace;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   transition:
@@ -773,7 +792,9 @@ h3 {
   box-shadow:
     0 8px 22px rgba(15, 20, 38, 0.3),
     0 0 0 1px color-mix(in srgb, var(--line) 42%, transparent);
-  font: 600 0.7rem/1 "JetBrains Mono", monospace;
+  font:
+    600 0.7rem/1 "JetBrains Mono",
+    monospace;
   letter-spacing: 0.04em;
   white-space: nowrap;
   cursor: pointer;

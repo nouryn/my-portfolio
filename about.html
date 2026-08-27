@@ -232,14 +232,22 @@
       }
       .drives-section {
         background:
-          linear-gradient(135deg, color-mix(in srgb, var(--orchid) 20%, transparent), transparent 58%),
+          linear-gradient(
+            135deg,
+            color-mix(in srgb, var(--orchid) 20%, transparent),
+            transparent 58%
+          ),
           var(--surface) !important;
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
       }
       .profile-section {
         background:
-          linear-gradient(135deg, color-mix(in srgb, var(--rose) 16%, transparent), transparent 55%),
+          linear-gradient(
+            135deg,
+            color-mix(in srgb, var(--rose) 16%, transparent),
+            transparent 55%
+          ),
           var(--bg) !important;
         color: var(--text);
         border-bottom: 1px solid var(--line);
@@ -249,7 +257,11 @@
       }
       .education-section {
         background:
-          linear-gradient(135deg, color-mix(in srgb, var(--gold) 16%, transparent), transparent 60%),
+          linear-gradient(
+            135deg,
+            color-mix(in srgb, var(--gold) 16%, transparent),
+            transparent 60%
+          ),
           var(--surface) !important;
         border-bottom: 1px solid var(--line);
       }
@@ -258,7 +270,11 @@
       }
       [data-theme="light"] .profile-section {
         background:
-          linear-gradient(135deg, color-mix(in srgb, var(--orchid) 22%, transparent), transparent 58%),
+          linear-gradient(
+            135deg,
+            color-mix(in srgb, var(--orchid) 22%, transparent),
+            transparent 58%
+          ),
           var(--surface-tint) !important;
         color: var(--ink);
       }
@@ -784,19 +800,68 @@
           </div>
         </div>
       </section>
-      <div class="moved-page-section achievements-theme" id="achievements">
-        <div class="shell" data-page-include="achievements.html"></div>
-      </div>
-      <div class="moved-page-section experience-theme" id="experience">
-        <div class="shell" data-page-include="experience.html"></div>
-      </div>
-      <div class="moved-page-section events-theme" id="events">
-        <div class="shell" data-page-include="events.html"></div>
-      </div>
+      <section class="section alt" id="achievements">
+        <div class="shell">
+          <p class="eyebrow">Achievements</p>
+          <h2>Recognition beyond <span class="accent">the syllabus.</span></h2>
+          <div
+            class="grid project-grid"
+            data-content-category="achievements_extracurricular,achievements_academic"
+            data-content-limit="3"
+          >
+            <p class="content-empty">Latest achievements will appear here.</p>
+          </div>
+          <a
+            class="button"
+            href="archive.php?category=achievements_extracurricular,achievements_academic"
+            >See more achievements →</a
+          >
+        </div>
+      </section>
+      <section class="section" id="experience">
+        <div class="shell">
+          <p class="eyebrow">Experiences</p>
+          <h2>Work, leadership & <span class="accent">service.</span></h2>
+          <div
+            class="grid project-grid"
+            data-content-category="experience_professional,experience_leadership,experience_ngo"
+            data-content-limit="3"
+          >
+            <p class="content-empty">
+              Latest experience entries will appear here.
+            </p>
+          </div>
+          <a
+            class="button"
+            href="archive.php?category=experience_professional,experience_leadership,experience_ngo"
+            >See more experience →</a
+          >
+        </div>
+      </section>
+      <section class="section alt" id="events">
+        <div class="shell">
+          <p class="eyebrow">Event management & volunteering</p>
+          <h2>Making meaningful things <span class="accent">happen.</span></h2>
+          <div
+            class="grid project-grid"
+            data-content-category="events,volunteering"
+            data-content-limit="3"
+          >
+            <p class="content-empty">
+              Latest event and volunteering entries will appear here.
+            </p>
+          </div>
+          <a class="button" href="archive.php?category=events,volunteering"
+            >See more events & volunteering →</a
+          >
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="shell footer-inner"><span>© 2026 Nouryn Eryssa</span></div>
     </footer>
+    <link rel="stylesheet" href="content.css" />
     <script src="script.js"></script>
+    <script src="content.js"></script>
   </body>
 </html>

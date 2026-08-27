@@ -486,7 +486,7 @@
             Technical and entrepreneurial concepts spanning fintech,
             environmental technology and circular design.
           </p>
-          <div class="grid project-grid">
+          <div class="grid project-grid" data-content-category="innovation" data-content-limit="3">
             <article class="card">
               <p class="kicker">Fintech concept</p>
               <h3>Keyreyn</h3>
@@ -536,7 +536,7 @@
           <a
             class="button"
             data-return-target="#innovation"
-            href="projects.html"
+            href="archive.php?category=innovation"
             >See more innovation projects →</a
           >
         </div>
@@ -551,7 +551,7 @@
             Analytical work that connects structured data, visual storytelling
             and practical business decisions.
           </p>
-          <div class="grid project-grid">
+          <div class="grid project-grid" data-content-category="business_intelligence,data_analytics" data-content-limit="3">
             <article class="card">
               <h3>Dashboard development</h3>
               <p>
@@ -598,6 +598,8 @@
               >
             </article>
           </div>
+          <a class="button" href="archive.php?category=business_intelligence,data_analytics"
+            >See more BI &amp; data analytics projects →</a
         </div>
       </section>
       <section class="section">
@@ -610,7 +612,7 @@
             Frontend and full-stack foundations for responsive, data-aware and
             user-focused web products.
           </p>
-          <div class="grid project-grid">
+          <div class="grid project-grid" data-content-category="web_development" data-content-limit="3">
             <article class="card">
               <h3>Frontend development</h3>
               <p>
@@ -657,6 +659,8 @@
               >
             </article>
           </div>
+          <a class="button" href="archive.php?category=web_development"
+            >See more web development projects →</a
         </div>
       </section>
       <section class="section certifications-section" id="certifications">
@@ -667,7 +671,7 @@
             A record of completed qualifications, digital credentials and
             ongoing learning across analytics, technology, finance and risk.
           </p>
-          <div class="grid">
+          <div class="grid" data-content-category="certifications" data-content-limit="3">
             <article class="card">
               <h3>Professional</h3>
               <p>
@@ -707,7 +711,7 @@
           <a
             class="button"
             data-return-target="#certifications"
-            href="certifications.html"
+            href="archive.php?category=certifications"
             >See more certifications →</a
           >
         </div>
@@ -723,7 +727,7 @@
             Focused learning across analytics, statistics, cloud tools and
             modern development workflows.
           </p>
-          <div class="grid">
+          <div class="grid" data-content-category="courses" data-content-limit="3">
             <article class="card">
               <h3>Analytics & BI</h3>
               <p class="kicker">August 2026</p>
@@ -746,7 +750,7 @@
           <a
             class="button"
             data-return-target="#professional-development"
-            href="development.html"
+            href="archive.php?category=courses"
             >See more courses →</a
           >
         </div>
@@ -771,7 +775,9 @@
         ><button data-top class="back-to-top">Back to top ↑</button>
       </div>
     </footer>
+    <link rel="stylesheet" href="content.css" />
     <script src="script.js"></script>
+    <script src="content.js"></script>
     <style>
       .currently-copy .intro {
         text-align: justify;
