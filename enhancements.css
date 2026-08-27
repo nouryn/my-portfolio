@@ -1,14 +1,14 @@
-/* Page-specific layers for the 2026 editorial redesign. */
+/* Page-specific layers for the 2026 minimalist batik redesign. */
 
-/* The image-led moments remain playful, but sit within the sharper studio system. */
+/* Image-led moments stay personal, with restrained framed-print treatment. */
 .hero-polaroid,
 .about-polaroid,
 .education-gallery .card,
 .journey-card,
 .polaroid {
   border: 1px solid var(--line) !important;
-  border-radius: 3px !important;
-  box-shadow: 10px 10px 0 var(--shadow) !important;
+  border-radius: 8px !important;
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--gold) 28%, transparent) !important;
 }
 
 .hero-polaroid,
@@ -32,7 +32,7 @@
   min-height: 34px !important;
   padding: 0 !important;
   border: 1px solid var(--ink) !important;
-  border-radius: 50% !important;
+  border-radius: 8px !important;
   background: var(--ink) !important;
   color: var(--surface) !important;
 }
@@ -46,9 +46,9 @@
 
 .drives-section .drives-grid > * {
   border: 1px solid var(--line) !important;
-  border-radius: 3px !important;
+  border-radius: 8px !important;
   background: var(--surface) !important;
-  box-shadow: 6px 6px 0 var(--shadow) !important;
+  box-shadow: 6px 6px 0 color-mix(in srgb, var(--gold) 24%, transparent) !important;
 }
 
 .profile-section,
@@ -67,8 +67,8 @@
 .achievement-section {
   background: var(--surface) !important;
   border: 1px solid var(--line) !important;
-  border-radius: 3px !important;
-  box-shadow: 10px 10px 0 var(--shadow) !important;
+  border-radius: 8px !important;
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--gold) 24%, transparent) !important;
 }
 
 .achievement-section.alt-list,
@@ -78,7 +78,7 @@
 .achievement-row,
 .achievement-list > article {
   border: 1px solid var(--line) !important;
-  border-radius: 2px !important;
+  border-radius: 8px !important;
   background: var(--surface) !important;
   box-shadow: none !important;
 }
@@ -87,18 +87,18 @@
 .achievement-row:hover,
 .achievement-list > article:hover {
   transform: translate(4px, 4px) !important;
-  box-shadow: -4px -4px 0 var(--accent) !important;
+  box-shadow: -4px -4px 0 color-mix(in srgb, var(--accent) 64%, transparent) !important;
 }
 
 .certificate-slot,
 .proof-slot {
   border: 1px dashed var(--accent) !important;
-  border-radius: 0 !important;
+  border-radius: 8px !important;
   background: color-mix(in srgb, var(--accent) 8%, var(--surface)) !important;
 }
 
 /* Detail pages stay clear and practical, while carrying the shared visual language. */
-.site-header { background: var(--navy) !important; border-bottom: 1px solid rgba(255, 255, 255, .45) !important; }
+.site-header { background: var(--navy) !important; border-bottom: 1px solid color-mix(in srgb, var(--line) 50%, transparent) !important; }
 .site-header a,
 .site-header .brand { color: #fff !important; }
 
@@ -106,12 +106,12 @@
 .detail-content,
 .detail-card,
 .project-detail,
-.experience-detail { border-radius: 3px !important; }
+.experience-detail { border-radius: 8px !important; }
 
 .detail-card,
 .detail-content > article,
 .project-detail .panel,
-.experience-detail .panel { border: 1px solid var(--line) !important; box-shadow: 8px 8px 0 var(--shadow) !important; }
+.experience-detail .panel { border: 1px solid var(--line) !important; box-shadow: 8px 8px 0 color-mix(in srgb, var(--gold) 22%, transparent) !important; }
 
 @media (max-width: 800px) {
   .hero-polaroid,

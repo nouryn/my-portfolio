@@ -22,7 +22,7 @@
         margin: 0 0 0 auto;
         padding: 18px 18px 52px;
         background: #fff;
-        border: 1px solid rgba(92, 182, 255, 0.52);
+        border: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
         border-radius: 8px;
         box-shadow:
           14px 16px 0 rgba(0, 0, 71, 0.16),
@@ -51,10 +51,10 @@
         margin: 0;
         padding: 14px 2px 0;
         background: transparent;
-        color: #000047;
+        color: var(--navy-deep);
         border-radius: 0;
         font:
-          600 0.86rem "DM Mono",
+          600 0.86rem "JetBrains Mono",
           monospace;
         text-align: left;
       }
@@ -63,7 +63,7 @@
         bottom: 11px;
       }
       .hero-polaroid .slide-controls button {
-        background: #000047;
+        background: var(--navy-deep);
       }
       .currently-grid {
         align-items: center;
@@ -114,12 +114,12 @@
       .button:focus-visible,
       .slide-controls button:hover,
       .slide-controls button:focus-visible {
-        background: #edf7ff;
-        color: #000047;
+        background: var(--surface-tint);
+        color: var(--navy-deep);
         border-color: var(--accent);
         box-shadow:
-          0 0 0 4px rgba(92, 182, 255, 0.18),
-          0 0 18px rgba(92, 182, 255, 0.42);
+          0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent),
+          0 12px 20px color-mix(in srgb, var(--accent) 22%, transparent);
         transform: translateY(-2px);
         outline: none;
       }
@@ -134,7 +134,7 @@
         background: var(--accent);
         color: var(--navy-deep);
         border-color: var(--accent);
-        box-shadow: 4px 4px 0 rgba(85, 184, 255, 0.35);
+        box-shadow: 4px 4px 0 color-mix(in srgb, var(--gold) 42%, transparent);
       }
     </style>
   </head>

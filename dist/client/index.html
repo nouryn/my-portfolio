@@ -22,9 +22,11 @@
         margin: 0 0 0 auto;
         padding: 18px 18px 52px;
         background: #fff;
-        border: 1px solid rgba(92, 182, 255, 0.52);
+        border: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
         border-radius: 8px;
-        box-shadow: 14px 16px 0 rgba(0, 0, 71, 0.16), 0 18px 40px rgba(0, 0, 71, 0.2);
+        box-shadow:
+          14px 16px 0 rgba(0, 0, 71, 0.16),
+          0 18px 40px rgba(0, 0, 71, 0.2);
         transform: rotate(1deg);
         overflow: visible;
       }
@@ -34,7 +36,9 @@
         padding: 0;
         background: transparent;
       }
-      .hero-polaroid .slide.active { display: block; }
+      .hero-polaroid .slide.active {
+        display: block;
+      }
       .hero-polaroid .slide img {
         display: block;
         width: 100%;
@@ -47,14 +51,23 @@
         margin: 0;
         padding: 14px 2px 0;
         background: transparent;
-        color: #000047;
+        color: var(--navy-deep);
         border-radius: 0;
-        font: 600 0.86rem "DM Mono", monospace;
+        font:
+          600 0.86rem "JetBrains Mono",
+          monospace;
         text-align: left;
       }
-      .hero-polaroid .slide-controls { right: 11px; bottom: 11px; }
-      .hero-polaroid .slide-controls button { background: #000047; }
-      .currently-grid { align-items: center; }
+      .hero-polaroid .slide-controls {
+        right: 11px;
+        bottom: 11px;
+      }
+      .hero-polaroid .slide-controls button {
+        background: var(--navy-deep);
+      }
+      .currently-grid {
+        align-items: center;
+      }
       .currently-gallery {
         display: grid;
         grid-template-columns: 1.25fr 0.75fr;
@@ -72,17 +85,25 @@
         border: 1px solid var(--line);
         border-radius: 16px;
       }
-      .currently-gallery .currently-main { grid-row: span 2; }
+      .currently-gallery .currently-main {
+        grid-row: span 2;
+      }
       @media (min-width: 761px) {
-        .grid.two.currently-grid { grid-template-columns: 0.82fr 1.18fr; }
+        .grid.two.currently-grid {
+          grid-template-columns: 0.82fr 1.18fr;
+        }
       }
       @media (max-width: 760px) {
-        .hero-polaroid { margin: 0 auto; transform: rotate(.5deg); }
-        .currently-gallery { width: min(100%, 420px); }
+        .hero-polaroid {
+          margin: 0 auto;
+          transform: rotate(0.5deg);
+        }
+        .currently-gallery {
+          width: min(100%, 420px);
+        }
       }
       .button,
-      .slide-controls button,
-      [data-top] {
+      .slide-controls button {
         transition:
           transform 0.2s ease,
           box-shadow 0.2s ease,
@@ -92,17 +113,28 @@
       .button:hover,
       .button:focus-visible,
       .slide-controls button:hover,
-      .slide-controls button:focus-visible,
-      [data-top]:hover,
-      [data-top]:focus-visible {
-        background: #edf7ff;
-        color: #000047;
+      .slide-controls button:focus-visible {
+        background: var(--surface-tint);
+        color: var(--navy-deep);
         border-color: var(--accent);
         box-shadow:
-          0 0 0 4px rgba(92, 182, 255, 0.18),
-          0 0 18px rgba(92, 182, 255, 0.42);
+          0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent),
+          0 12px 20px color-mix(in srgb, var(--accent) 22%, transparent);
         transform: translateY(-2px);
         outline: none;
+      }
+      .project-card-link {
+        display: flex;
+        align-self: flex-start;
+        width: max-content;
+        margin-top: 12px;
+      }
+      .project-card-link:hover,
+      .project-card-link:focus-visible {
+        background: var(--accent);
+        color: var(--navy-deep);
+        border-color: var(--accent);
+        box-shadow: 4px 4px 0 color-mix(in srgb, var(--gold) 42%, transparent);
       }
     </style>
   </head>
@@ -137,29 +169,30 @@
                 src="assets/home-polaroid/frame-1.jpeg"
                 alt="Nouryn Eryssa outdoors at night"
               />
-              <p>Get to know me</p>
             </div>
             <div class="slide">
               <img
                 src="assets/home-polaroid/frame-2.jpeg"
                 alt="Nouryn Eryssa receiving a Dean's Award"
               />
-              <p>Get to know me</p>
             </div>
             <div class="slide">
               <img
                 src="assets/home-polaroid/frame-3.jpeg"
                 alt="Nouryn Eryssa at a UiTM volunteer event"
               />
-              <p>Get to know me</p>
             </div>
             <div class="slide">
-              <img src="assets/home-polaroid/frame-4.jpeg" alt="Nouryn Eryssa with the UiTM volunteer flag" />
-              <p>Get to know me</p>
+              <img
+                src="assets/home-polaroid/frame-4.jpeg"
+                alt="Nouryn Eryssa with the UiTM volunteer flag"
+              />
             </div>
             <div class="slide">
-              <img src="assets/home-polaroid/frame-5.jpeg" alt="Nouryn Eryssa at an actuarial event" />
-              <p>Get to know me</p>
+              <img
+                src="assets/home-polaroid/frame-5.jpeg"
+                alt="Nouryn Eryssa at an actuarial event"
+              />
             </div>
             <div class="slide-controls">
               <button data-prev aria-label="Previous image">←</button
@@ -170,24 +203,37 @@
       </section>
       <section class="section alt">
         <div class="shell grid two currently-grid">
-          <div class="currently-gallery" aria-label="Nouryn's current learning and event moments">
-            <img class="currently-main" src="assets/personal/professional-portrait.jpeg" alt="Nouryn Eryssa in a professional blazer" />
-            <img src="assets/personal/library-portrait.jpeg" alt="Nouryn Eryssa exploring a library" />
-            <img src="assets/personal/ifoa-event.jpeg" alt="Nouryn Eryssa at an actuarial event" />
+          <div
+            class="currently-gallery"
+            aria-label="Nouryn's current learning and event moments"
+          >
+            <img
+              class="currently-main"
+              src="assets/personal/professional-portrait.jpeg"
+              alt="Nouryn Eryssa in a professional blazer"
+            />
+            <img
+              src="assets/personal/library-portrait.jpeg"
+              alt="Nouryn Eryssa exploring a library"
+            />
+            <img
+              src="assets/personal/ifoa-event.jpeg"
+              alt="Nouryn Eryssa at an actuarial event"
+            />
           </div>
           <div class="currently-copy">
             <p class="eyebrow">Currently</p>
             <h2>Learning beyond the classroom.</h2>
             <p class="intro">
               I am currently pursuing a Bachelor of Actuarial Science (Hons.) at
-              UiTM, where I am strengthening my foundation in probability,
-              statistics, financial mathematics and risk management. Alongside
-              my degree, I am developing practical capability in Excel, Power
-              BI, SQL, Python and data storytelling, while exploring AI-assisted
-              development and technology-enabled business solutions. Beyond the
-              classroom, I take on leadership, event-management and volunteering
-              roles that strengthen how I communicate, organise work and
-              contribute within diverse teams.
+              UiTM Shah Alam where I am strengthening my foundation in actuarial
+              studies, probability, statistics, financial mathematics and risk
+              management. Alongside my degree, I am developing practical
+              capability in Excel, Power BI, SQL, Python and data storytelling,
+              while exploring AI-assisted development and technology-enabled
+              business solutions. Beyond the classroom, I take on leadership,
+              event management and volunteering roles that strengthen how I
+              communicate, organise work and contribute within diverse teams.
             </p>
           </div>
         </div>
@@ -277,148 +323,432 @@
           </div>
         </div>
       </section>
-      <section class="section alt">
+      <nav class="section-tabs" aria-label="Portfolio sections">
+        <div class="shell section-tabs-inner">
+          <div class="section-tabs-links">
+            <a href="#skills">Skills</a>
+            <a href="#innovation">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#professional-development">Courses</a>
+          </div>
+        </div>
+      </nav>
+      <section class="section alt skill-showcase" id="skills">
         <div class="shell">
-          <p class="eyebrow">What I’m exploring</p>
-          <div class="grid">
+          <p class="eyebrow">Skills</p>
+          <h2>Data-minded. <span class="accent">Business-ready.</span></h2>
+          <div class="grid two">
             <article class="card">
-              <h3>Analytics</h3>
+              <h3>Analytics & BI</h3>
               <p>
-                Power BI · Excel · Data Visualisation · Business Intelligence ·
-                SAP Analytics Cloud
+                Microsoft Excel, Power Query, Power BI, Tableau, SAP Analytics
+                Cloud.
               </p>
+              <div class="skill-marquee" aria-label="Analytics tools">
+                <div class="skill-marquee-track">
+                  <div class="skill-marquee-set">
+                    <img
+                      class="skill-logo"
+                      src="assets/skill-logos/excel.svg"
+                      alt="Microsoft Excel"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/power-query.svg"
+                      alt="Microsoft Power Query"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/power-bi.svg"
+                      alt="Microsoft Power BI"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/tableau.svg"
+                      alt="Tableau"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/sap.svg"
+                      alt="SAP Analytics Cloud"
+                    />
+                  </div>
+                </div>
+              </div>
             </article>
             <article class="card">
-              <h3>Technology</h3>
+              <h3>Programming</h3>
               <p>
-                AI Tools · React · APIs · Full-Stack Foundations · Cloud
-                Technologies
+                Python, R, JavaScript, TypeScript, C++, HTML, CSS, React and
+                Node.js.
               </p>
+              <div class="skill-marquee" aria-label="Programming tools">
+                <div class="skill-marquee-track">
+                  <div class="skill-marquee-set">
+                    <img
+                      class="skill-logo"
+                      src="assets/skill-logos/python.svg"
+                      alt="Python"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/r.svg"
+                      alt="R"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/javascript.svg"
+                      alt="JavaScript"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/typescript.svg"
+                      alt="TypeScript"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/cplusplus.svg"
+                      alt="C++"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/html5.svg"
+                      alt="HTML5"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/css.svg"
+                      alt="CSS"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/react.svg"
+                      alt="React"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/nodejs.svg"
+                      alt="Node.js"
+                    />
+                  </div>
+                </div>
+              </div>
             </article>
+            <div class="skill-card-stack">
+              <article class="card">
+                <h3>Risk & finance</h3>
+                <p>
+                  Statistical modelling, financial mathematics, risk management,
+                  ALM, insurance and IFRS 17.
+                </p>
+              </article>
+              <article class="card">
+                <h3>Accounting software</h3>
+                <p class="accounting-tool">
+                  <img
+                    class="accounting-logo"
+                    src="assets/skill-logos/autocount-cloud.png"
+                    alt="AutoCount Cloud"
+                  />
+                  <span>AutoCount Cloud.</span>
+                </p>
+              </article>
+            </div>
             <article class="card">
-              <h3>Leadership</h3>
+              <h3>Data & cloud</h3>
               <p>
-                Event Management · Committees · Volunteering · Teamwork ·
-                Communication
+                MySQL, PostgreSQL, Supabase, Git/GitHub and cloud fundamentals.
               </p>
+              <div class="skill-marquee" aria-label="Data and cloud tools">
+                <div class="skill-marquee-track">
+                  <div class="skill-marquee-set">
+                    <img
+                      class="skill-logo"
+                      src="assets/skill-logos/mysql.svg"
+                      alt="MySQL"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/postgresql.svg"
+                      alt="PostgreSQL"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/supabase.svg"
+                      alt="Supabase"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/git.svg"
+                      alt="Git"
+                    /><img
+                      class="skill-logo"
+                      src="assets/skill-logos/github.svg"
+                      alt="GitHub"
+                    />
+                  </div>
+                </div>
+              </div>
             </article>
           </div>
         </div>
       </section>
-      <section class="section">
+      <section class="section" id="innovation">
         <div class="shell">
-          <p class="eyebrow">Featured projects</p>
-          <h2>Stories, Data, And Impact.</h2>
-          <div class="grid">
+          <p class="eyebrow">Innovation</p>
+          <h2>Ideas with a <span class="accent">purpose.</span></h2>
+          <p class="intro">
+            Technical and entrepreneurial concepts spanning fintech,
+            environmental technology and circular design.
+          </p>
+          <div class="grid project-grid">
             <article class="card">
+              <p class="kicker">Fintech concept</p>
               <h3>Keyreyn</h3>
               <p>
-                Innovation · biometric payment concept using iris-recognition
+                Secure, contactless payment using iris-recognition
                 authentication.
               </p>
-              <p class="tag">Fintech</p>
-              <p class="tag">Security</p>
-              <p><a class="button" href="projects.html">View project →</a></p>
+              <span class="tag">Fintech</span>
+              <span class="tag">Authentication</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#innovation"
+                href="project-keyreyn.html"
+                >Open case study →</a
+              >
             </article>
             <article class="card">
+              <p class="kicker">Environmental technology</p>
               <h3>Project ARI</h3>
-              <p>
-                Innovation · IoT-enabled waste collection, filtration and
-                environmental monitoring concept.
-              </p>
-              <p class="tag">IoT</p>
-              <p class="tag">Sustainability</p>
-              <p><a class="button" href="projects.html">View project →</a></p>
+              <p>An IoT-enabled waterway clean-up and monitoring solution.</p>
+              <span class="tag">IoT</span>
+              <span class="tag">Sustainability</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#innovation"
+                href="project-ari.html"
+                >Open case study →</a
+              >
             </article>
             <article class="card">
+              <p class="kicker">Circular design</p>
               <h3>Nature’s Canvas</h3>
               <p>
-                Innovation · Arduino-supported seed-paper production concept
-                from recycled paper.
+                An Arduino-enabled concept for converting waste paper into seed
+                paper.
               </p>
-              <p class="tag">Automation</p>
-              <p class="tag">Circular design</p>
-              <p><a class="button" href="projects.html">View project →</a></p>
+              <span class="tag">Automation</span>
+              <span class="tag">Circular economy</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#innovation"
+                href="project-natures-canvas.html"
+                >Open case study →</a
+              >
             </article>
           </div>
+          <a
+            class="button"
+            data-return-target="#innovation"
+            href="projects.html"
+            >See more innovation projects →</a
+          >
         </div>
       </section>
       <section class="section alt">
         <div class="shell">
-          <p class="eyebrow">Selected experiences</p>
-          <div class="timeline">
-            <article>
-              <h3>2026 — Actuarial Case Excellence Competition</h3>
+          <p class="eyebrow" id="business-intelligence">
+            Business intelligence & data analytics
+          </p>
+          <h2>Turning data into <span class="accent">direction.</span></h2>
+          <p class="intro">
+            Analytical work that connects structured data, visual storytelling
+            and practical business decisions.
+          </p>
+          <div class="grid project-grid">
+            <article class="card">
+              <h3>Dashboard development</h3>
               <p>
-                Director role for a national competition under Actuarial Science
-                Club (UiTM Shah Alam).
+                Power BI dashboards that turn operational data into clear,
+                decision-ready views.
               </p>
+              <span class="tag">Power BI</span>
+              <span class="tag">Visualisation</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#business-intelligence"
+                href="business-intelligence-dashboard.html"
+                >Open case study →</a
+              >
             </article>
-            <article>
-              <h3>2026 — Leadership, events & volunteering</h3>
+            <article class="card">
+              <h3>Data preparation</h3>
               <p>
-                Committee and community roles within UiTM and external
-                organizations.
+                Excel, Power Query and SQL workflows for cleaning, shaping and
+                organising reliable datasets.
               </p>
+              <span class="tag">Excel</span>
+              <span class="tag">SQL</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#business-intelligence"
+                href="data-preparation.html"
+                >Open case study →</a
+              >
             </article>
-            <article>
-              <h3>2025–Present — Actuarial Science at UiTM</h3>
+            <article class="card">
+              <h3>Statistical analysis</h3>
               <p>
-                Academic development alongside club and mobility involvement.
+                Regression, modelling and data storytelling that support
+                evidence-based business analysis.
               </p>
-            </article>
-            <article>
-              <h3>2024–2025 — Teratai Amora</h3>
-              <p>Founder experience running a handmade bouquet business.</p>
+              <span class="tag">Statistics</span>
+              <span class="tag">Data storytelling</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#business-intelligence"
+                href="statistical-analysis.html"
+                >Open case study →</a
+              >
             </article>
           </div>
-          <a class="button" href="experience.html">View all experiences →</a>
         </div>
       </section>
       <section class="section">
         <div class="shell">
-          <p class="eyebrow">Credentials preview</p>
-          <div class="grid">
-            <article class="card"><h3>AI+ Security Level 1</h3></article>
-            <article class="card"><h3>SAS SQL Essentials</h3></article>
+          <p class="eyebrow" id="web-development">Web development</p>
+          <h2>
+            Building useful <span class="accent">digital experiences.</span>
+          </h2>
+          <p class="intro">
+            Frontend and full-stack foundations for responsive, data-aware and
+            user-focused web products.
+          </p>
+          <div class="grid project-grid">
             <article class="card">
-              <h3>SAS Statistical Business Analyst</h3>
+              <h3>Frontend development</h3>
+              <p>
+                Responsive interfaces built with HTML, CSS, JavaScript, React
+                and TypeScript.
+              </p>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#web-development"
+                href="frontend-development.html"
+                >Open case study →</a
+              >
             </article>
             <article class="card">
-              <h3>EY–Microsoft AI Skills Passport</h3>
+              <h3>Full-stack foundations</h3>
+              <p>
+                Application development across APIs, Node.js, databases and
+                practical product workflows.
+              </p>
+              <span class="tag">APIs</span>
+              <span class="tag">Node.js</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#web-development"
+                href="full-stack-foundations.html"
+                >Open case study →</a
+              >
             </article>
-            <article class="card"><h3>AWS Cloud Essentials</h3></article>
             <article class="card">
-              <h3>Insurance & IFRS 17 Foundations</h3>
+              <h3>Cloud & collaboration</h3>
+              <p>
+                Git/GitHub, PostgreSQL, Supabase and cloud fundamentals for
+                developing and maintaining modern web projects.
+              </p>
+              <span class="tag">Git/GitHub</span>
+              <span class="tag">Cloud</span>
+              <a
+                class="button project-card-link"
+                data-return-target="#web-development"
+                href="cloud-collaboration.html"
+                >Open case study →</a
+              >
             </article>
-          </div>
-          <div class="buttons">
-            <a class="button" href="certifications.html"
-              >View all certifications →</a
-            >
           </div>
         </div>
       </section>
-      <section class="section alt">
+      <section class="section certifications-section" id="certifications">
         <div class="shell">
-          <p class="eyebrow">Highlights</p>
+          <p class="eyebrow">Certifications & Digital Credentials</p>
+          <h2>Learning with <span class="accent">evidence.</span></h2>
+          <p class="intro">
+            A record of completed qualifications, digital credentials and
+            ongoing learning across analytics, technology, finance and risk.
+          </p>
           <div class="grid">
             <article class="card">
-              <div class="metric">3.87</div>
-              <h3>Current CGPA</h3>
-              <p>Dean’s List, UiTM</p>
+              <h3>Professional</h3>
+              <p>
+                SAS Certified Statistical Business Analyst Using SAS 9; AI+
+                Security Level 1; Takaful Basic Examination; Lean Six Sigma
+                White Belt.
+              </p>
+              <a
+                class="button"
+                target="_blank"
+                href="https://www.sas.com/en_my/certification.html"
+                >Source ↗</a
+              >
             </article>
             <article class="card">
-              <div class="metric">4.00</div>
-              <h3>Foundation CGPA</h3>
-              <p>University of Malaya</p>
+              <h3>Digital credentials</h3>
+              <p>
+                EY–Microsoft AI Skills Passport; AWS Cloud Essentials; SAS SQL
+                Essentials; Foundations of Risk and ALM; Foundations of
+                Insurance and IFRS 17.
+              </p>
+              <a
+                class="button"
+                target="_blank"
+                href="https://learn.microsoft.com/en-us/credentials/"
+                >Source ↗</a
+              >
             </article>
             <article class="card">
-              <div class="metric">4</div>
-              <h3>Innovation projects</h3>
-              <p>Featured in the portfolio</p>
+              <h3>In progress</h3>
+              <p>SOA Exam P and FIMM Combined Examination, expected 2027.</p>
+              <a class="button" target="_blank" href="https://www.soa.org/"
+                >Source ↗</a
+              >
             </article>
           </div>
+          <a
+            class="button"
+            data-return-target="#certifications"
+            href="certifications.html"
+            >See more certifications →</a
+          >
+        </div>
+      </section>
+      <section
+        class="section professional-development-section"
+        id="professional-development"
+      >
+        <div class="shell">
+          <p class="eyebrow">Courses - Professional Development</p>
+          <h2>Courses built through <span class="accent">practice.</span></h2>
+          <p class="intro">
+            Focused learning across analytics, statistics, cloud tools and
+            modern development workflows.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <h3>Analytics & BI</h3>
+              <p class="kicker">August 2026</p>
+              <p>Excel, Power Query, Power BI, DAX and data visualisation.</p>
+              <p class="tag">Proof image: upload pending</p>
+            </article>
+            <article class="card">
+              <h3>SAS & statistics</h3>
+              <p class="kicker">August 2026</p>
+              <p>SQL, regression and statistical business analysis.</p>
+              <p class="tag">Proof image: upload pending</p>
+            </article>
+            <article class="card">
+              <h3>Cloud & development</h3>
+              <p class="kicker">August 2026</p>
+              <p>AWS, Git/GitHub and AI-enabled full-stack development.</p>
+              <p class="tag">Proof image: upload pending</p>
+            </article>
+          </div>
+          <a
+            class="button"
+            data-return-target="#professional-development"
+            href="development.html"
+            >See more courses →</a
+          >
         </div>
       </section>
       <section class="section">
@@ -438,7 +768,7 @@
     <footer class="footer">
       <div class="shell footer-inner">
         <span>© 2026 Nouryn Eryssa</span
-        ><button data-top class="theme-toggle">Back to top ↑</button>
+        ><button data-top class="back-to-top">Back to top ↑</button>
       </div>
     </footer>
     <script src="script.js"></script>

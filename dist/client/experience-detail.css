@@ -1,5 +1,5 @@
 .experience-meta { display: flex; flex-wrap: wrap; gap: 9px; margin: 18px 0 28px; }
-.experience-meta span { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font: 500 .72rem "DM Mono", monospace; }
+.experience-meta span { padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font: 500 .72rem "JetBrains Mono", monospace; }
 .experience-summary { max-width: 900px; }
 .experience-summary li { margin: 12px 0; color: var(--muted); line-height: 1.65; }
 .experience-photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }

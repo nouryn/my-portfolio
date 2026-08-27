@@ -19,7 +19,7 @@
         margin-right: auto !important;
         padding: 14px 14px 48px;
         background: #fff;
-        border: 1px solid rgba(92, 182, 255, 0.58);
+        border: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
         border-radius: 7px;
         box-shadow:
           13px 15px 0 rgba(0, 0, 71, 0.14),
@@ -47,16 +47,16 @@
         bottom: 10px;
       }
       .about-polaroid .slide-controls button {
-        background: #000047;
+        background: var(--navy-deep);
       }
       .about-polaroid-caption {
         position: absolute;
         left: 16px;
         bottom: 16px;
         margin: 0;
-        color: #000047;
+        color: var(--navy-deep);
         font:
-          600 0.74rem "DM Mono",
+          600 0.74rem "JetBrains Mono",
           monospace;
       }
       .polaroid-card {
@@ -85,7 +85,7 @@
         margin-top: 4px;
         color: var(--accent);
         font:
-          500 0.78rem "DM Mono",
+          500 0.78rem "JetBrains Mono",
           monospace;
       }
       .timeline .education-entry {
@@ -124,14 +124,14 @@
       .course-code {
         color: var(--accent);
         font:
-          500 0.72rem "DM Mono",
+          500 0.72rem "JetBrains Mono",
           monospace;
         white-space: nowrap;
       }
       .course-term {
         color: var(--accent);
         font:
-          600 0.72rem "DM Mono",
+          600 0.72rem "JetBrains Mono",
           monospace;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -151,7 +151,7 @@
         padding: 11px 12px;
         border: 1px dashed var(--line);
         border-radius: 10px;
-        color: #343434;
+        color: var(--ink);
         font-size: 0.86rem;
         transition:
           transform 0.2s ease,
@@ -161,11 +161,11 @@
       }
       a.record-placeholder:hover,
       a.record-placeholder:focus-visible {
-        background: #edf7ff;
+        background: var(--surface-tint);
         border-color: var(--accent);
         box-shadow:
-          0 0 0 4px rgba(92, 182, 255, 0.18),
-          0 0 18px rgba(92, 182, 255, 0.42);
+          0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent),
+          0 12px 20px color-mix(in srgb, var(--accent) 22%, transparent);
         transform: translateY(-2px);
         outline: none;
       }
@@ -232,14 +232,14 @@
       }
       .drives-section {
         background:
-          linear-gradient(135deg, rgba(97, 181, 246, 0.16), transparent 58%),
+          linear-gradient(135deg, color-mix(in srgb, var(--orchid) 20%, transparent), transparent 58%),
           var(--surface) !important;
         border-top: 1px solid var(--line);
         border-bottom: 1px solid var(--line);
       }
       .profile-section {
         background:
-          linear-gradient(135deg, rgba(97, 181, 246, 0.12), transparent 55%),
+          linear-gradient(135deg, color-mix(in srgb, var(--rose) 16%, transparent), transparent 55%),
           var(--bg) !important;
         color: var(--text);
         border-bottom: 1px solid var(--line);
@@ -249,17 +249,17 @@
       }
       .education-section {
         background:
-          linear-gradient(135deg, rgba(97, 181, 246, 0.12), transparent 60%),
+          linear-gradient(135deg, color-mix(in srgb, var(--gold) 16%, transparent), transparent 60%),
           var(--surface) !important;
         border-bottom: 1px solid var(--line);
       }
       .beyond-section {
-        border-top: 1px solid rgba(97, 181, 246, 0.45);
+        border-top: 1px solid color-mix(in srgb, var(--line) 65%, transparent);
       }
       [data-theme="light"] .profile-section {
         background:
-          linear-gradient(135deg, rgba(97, 181, 246, 0.2), transparent 58%),
-          #eaf4ff !important;
+          linear-gradient(135deg, color-mix(in srgb, var(--orchid) 22%, transparent), transparent 58%),
+          var(--surface-tint) !important;
         color: var(--ink);
       }
       @media (max-width: 760px) {

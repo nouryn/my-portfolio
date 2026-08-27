@@ -93,30 +93,30 @@
         ? "dark"
         : "light"),
   );
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const links = document.querySelector(".links");
+  const closeMenu = () => {
+    links?.classList.remove("is-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+    menuToggle?.setAttribute("aria-label", "Open navigation menu");
+    menuToggle?.setAttribute("title", "Open navigation menu");
+  };
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = links?.classList.toggle("is-open") ?? false;
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation menu" : "Open navigation menu",
+    );
+    menuToggle.setAttribute(
+      "title",
+      isOpen ? "Close navigation menu" : "Open navigation menu",
+    );
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
   document.addEventListener("click", (e) => {
-    const menuToggle = document.querySelector("[data-menu-toggle]"),
-      links = document.querySelector(".links"),
-      closeMenu = () => {
-        links?.classList.remove("is-open");
-        menuToggle?.setAttribute("aria-expanded", "false");
-        menuToggle?.setAttribute("aria-label", "Open navigation menu");
-        menuToggle?.setAttribute("title", "Open navigation menu");
-      };
-    menuToggle?.addEventListener("click", () => {
-      const isOpen = links?.classList.toggle("is-open") ?? false;
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu",
-      );
-      menuToggle.setAttribute(
-        "title",
-        isOpen ? "Close navigation menu" : "Open navigation menu",
-      );
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
-    });
     const returnTarget = e.target.closest("[data-return-target]");
     if (e.target.closest(".links a")) closeMenu();
     if (returnTarget)

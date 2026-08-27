@@ -1,1 +1,122 @@
-:root{--navy:#000047;--bg:#000047}body{background:radial-gradient(circle at 18% 10%,#15157a 0%,transparent 34%),radial-gradient(circle at 83% 82%,#090958 0%,transparent 40%),linear-gradient(135deg,#000047 0%,#00002d 100%);transition:background .55s ease,color .35s ease}body:before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.22;background-image:radial-gradient(rgba(255,255,255,.18) .55px,transparent .65px);background-size:5px 5px;mask-image:radial-gradient(ellipse at center,transparent 35%,#000 100%)}[data-theme=light] body{background:radial-gradient(circle at 15% 4%,#e3f1ff 0%,transparent 32%),radial-gradient(circle at 90% 90%,#d7e9fa 0%,transparent 38%),#f7fafe}.nav,.section,.card,.flip-face,.slideshow,.footer,.button,.theme-toggle{transition:background-color .4s ease,color .3s ease,border-color .4s ease,box-shadow .35s ease,transform .2s ease}table{width:100%;border-collapse:collapse;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;overflow:hidden}th,td{padding:17px 19px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{width:30%;font-family:Syne,sans-serif;color:var(--accent);background:var(--mist)}tr:last-child th,tr:last-child td{border-bottom:0}.slideshow .slide{position:relative}.slideshow .slide p{position:absolute;left:16px;bottom:8px;background:rgba(0,0,71,.82);color:#fff;padding:6px 10px;border-radius:6px;font-size:.75rem}.bubble{transition:transform .2s,box-shadow .2s}.bubble:hover{transform:translateY(-4px);box-shadow:0 12px 25px rgba(0,0,0,.16)}.bounce{animation:bounce .45s ease}@keyframes bounce{40%{transform:translateY(-12px) scale(1.03)}70%{transform:translateY(2px)}100%{transform:translateY(0)}}progress{width:100%;height:10px;accent-color:var(--accent);margin:2px 0 15px}@media(max-width:760px){th,td{display:block;width:100%}th{padding-bottom:5px}td{padding-top:5px}}
+/* Page-specific layers for the 2026 minimalist batik redesign. */
+
+/* Image-led moments stay personal, with restrained framed-print treatment. */
+.hero-polaroid,
+.about-polaroid,
+.education-gallery .card,
+.journey-card,
+.polaroid {
+  border: 1px solid var(--line) !important;
+  border-radius: 8px !important;
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--gold) 28%, transparent) !important;
+}
+
+.hero-polaroid,
+.about-polaroid { background: var(--surface) !important; }
+
+.hero-polaroid .slideshow,
+.about-polaroid .slideshow,
+.education-gallery .slideshow,
+.journey-card .slideshow,
+.hero-polaroid img,
+.about-polaroid img,
+.education-gallery img,
+.journey-card img { border-radius: 0 !important; }
+
+.slide-controls button,
+.hero-polaroid .slide-controls button,
+.about-polaroid .slide-controls button {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  min-height: 34px !important;
+  padding: 0 !important;
+  border: 1px solid var(--ink) !important;
+  border-radius: 8px !important;
+  background: var(--ink) !important;
+  color: var(--surface) !important;
+}
+
+/* About page: each chapter gets its own material treatment. */
+.drives-section {
+  background: var(--surface-tint) !important;
+  border-top: 1px solid var(--line) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+
+.drives-section .drives-grid > * {
+  border: 1px solid var(--line) !important;
+  border-radius: 8px !important;
+  background: var(--surface) !important;
+  box-shadow: 6px 6px 0 color-mix(in srgb, var(--gold) 24%, transparent) !important;
+}
+
+.profile-section,
+.profile-wrap { background: var(--navy-deep) !important; color: #fff !important; }
+
+[data-theme="light"] .profile-section,
+[data-theme="light"] .profile-wrap { background: var(--surface-tint) !important; color: var(--ink) !important; }
+
+.education-section,
+.education-journey { background: var(--surface) !important; border-top: 1px solid var(--line) !important; }
+
+.education-timeline::before,
+.timeline::before { background: var(--accent) !important; }
+
+/* Achievements use the same clear reading rhythm across both categories. */
+.achievement-section {
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 8px !important;
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--gold) 24%, transparent) !important;
+}
+
+.achievement-section.alt-list,
+.achievement-section:nth-of-type(even) { background: var(--surface-tint) !important; }
+
+.achievement-item,
+.achievement-row,
+.achievement-list > article {
+  border: 1px solid var(--line) !important;
+  border-radius: 8px !important;
+  background: var(--surface) !important;
+  box-shadow: none !important;
+}
+
+.achievement-item:hover,
+.achievement-row:hover,
+.achievement-list > article:hover {
+  transform: translate(4px, 4px) !important;
+  box-shadow: -4px -4px 0 color-mix(in srgb, var(--accent) 64%, transparent) !important;
+}
+
+.certificate-slot,
+.proof-slot {
+  border: 1px dashed var(--accent) !important;
+  border-radius: 8px !important;
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface)) !important;
+}
+
+/* Detail pages stay clear and practical, while carrying the shared visual language. */
+.site-header { background: var(--navy) !important; border-bottom: 1px solid color-mix(in srgb, var(--line) 50%, transparent) !important; }
+.site-header a,
+.site-header .brand { color: #fff !important; }
+
+.detail-hero,
+.detail-content,
+.detail-card,
+.project-detail,
+.experience-detail { border-radius: 8px !important; }
+
+.detail-card,
+.detail-content > article,
+.project-detail .panel,
+.experience-detail .panel { border: 1px solid var(--line) !important; box-shadow: 8px 8px 0 color-mix(in srgb, var(--gold) 22%, transparent) !important; }
+
+@media (max-width: 800px) {
+  .hero-polaroid,
+  .about-polaroid,
+  .education-gallery .card,
+  .journey-card,
+  .achievement-section { box-shadow: 6px 6px 0 var(--shadow) !important; }
+}

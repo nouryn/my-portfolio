@@ -5,13 +5,23 @@
   );
   const page = location.pathname.split("/").pop() || "index.html",
     nav = document.querySelector(".nav-inner");
+  if (page === "index.html") {
+    const savedTarget = sessionStorage.getItem("home-return-target");
+    if (savedTarget) {
+      sessionStorage.removeItem("home-return-target");
+      const restoreHomeSection = () =>
+        setTimeout(
+          () => document.querySelector(savedTarget)?.scrollIntoView(),
+          0,
+        );
+      if (document.readyState === "complete") restoreHomeSection();
+      else window.addEventListener("load", restoreHomeSection, { once: true });
+    }
+  }
   if (nav)
-    nav.innerHTML = `<a class="brand" href="index.html"><img src="assets/logo-transparent.png" alt="Nouryn Eryssa logo">Nouryn <span>Eryssa</span></a><nav class="links">${[
+    nav.innerHTML = `<a class="brand" href="index.html" aria-label="Nouryn Eryssa home"><span class="brand-mark"><img src="assets/logo-transparent.png" alt="" aria-hidden="true"></span>Nouryn <span>Eryssa</span></a><nav class="links">${[
       ["index.html", "Home"],
       ["about.html", "About"],
-      ["projects.html", "Projects"],
-      ["skills.html", "Skills"],
-      ["certifications.html", "Certifications"],
       ["contact.html", "Contact"],
     ]
       .map(
@@ -20,7 +30,7 @@
       )
       .join(
         "",
-      )}</nav><button class="menu-toggle" data-menu-toggle type="button" aria-label="Open navigation menu" aria-expanded="false" title="Open navigation menu"><span></span><span></span><span></span></button><button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch to light mode" title="Switch to light mode">☾ Dark</button>`;
+      )}</nav><button class="menu-toggle" data-menu-toggle type="button" aria-label="Open navigation menu" aria-expanded="false" title="Open navigation menu"><span></span><span></span><span></span></button><button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch to light mode" title="Switch to light mode"><span aria-hidden="true">☼</span></button>`;
   document.querySelectorAll("[data-page-include]").forEach(async (target) => {
     try {
       const response = await fetch(target.dataset.pageInclude);
@@ -59,21 +69,38 @@
     )
       img.src = `assets/personal/${photos[i % photos.length]}`;
   });
+  const themeToggle = document.querySelector("[data-theme-toggle]");
+  const brandLogo = document.querySelector(".brand-mark img");
   const set = (t) => {
     document.documentElement.dataset.theme = t;
     localStorage.setItem("portfolio-theme", t);
-    document.querySelector("[data-theme-toggle]").textContent =
-      t === "light" ? "☾ Dark" : "☀ Light";
+    if (brandLogo)
+      brandLogo.src =
+        t === "dark" ? "assets/logo-light.png" : "assets/logo-transparent.png";
+    if (themeToggle) {
+      const isLight = t === "light";
+      themeToggle.innerHTML = `<span aria-hidden="true">${isLight ? "☾" : "☼"}</span>`;
+      themeToggle.setAttribute(
+        "aria-label",
+        `Switch to ${isLight ? "dark" : "light"} mode`,
+      );
+      themeToggle.title = `Switch to ${isLight ? "dark" : "light"} mode`;
+    }
   };
-  set(localStorage.getItem("portfolio-theme") || "dark");
-  const menuToggle = document.querySelector("[data-menu-toggle]"),
-    links = document.querySelector(".links"),
-    closeMenu = () => {
-      links?.classList.remove("is-open");
-      menuToggle?.setAttribute("aria-expanded", "false");
-      menuToggle?.setAttribute("aria-label", "Open navigation menu");
-      menuToggle?.setAttribute("title", "Open navigation menu");
-    };
+  set(
+    localStorage.getItem("portfolio-theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"),
+  );
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const links = document.querySelector(".links");
+  const closeMenu = () => {
+    links?.classList.remove("is-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+    menuToggle?.setAttribute("aria-label", "Open navigation menu");
+    menuToggle?.setAttribute("title", "Open navigation menu");
+  };
   menuToggle?.addEventListener("click", () => {
     const isOpen = links?.classList.toggle("is-open") ?? false;
     menuToggle.setAttribute("aria-expanded", String(isOpen));
@@ -90,7 +117,24 @@
     if (e.key === "Escape") closeMenu();
   });
   document.addEventListener("click", (e) => {
+    const returnTarget = e.target.closest("[data-return-target]");
     if (e.target.closest(".links a")) closeMenu();
+    if (returnTarget)
+      sessionStorage.setItem(
+        "home-return-target",
+        returnTarget.dataset.returnTarget,
+      );
+    const backHome = e.target.closest("[data-back-home]");
+    if (backHome) {
+      e.preventDefault();
+      const previousPage = document.referrer
+        ? new URL(document.referrer, location.href)
+        : null;
+      const cameFromSite = previousPage?.origin === location.origin;
+      if (cameFromSite && history.length > 1) history.back();
+      else location.href = "index.html";
+      return;
+    }
     if (e.target.closest("[data-theme-toggle]"))
       set(
         document.documentElement.dataset.theme === "light" ? "dark" : "light",
@@ -123,7 +167,34 @@
     s.querySelector("[data-prev]")?.addEventListener("click", () =>
       show(i - 1),
     );
-    setInterval(() => show(i + 1), 5000);
+    if (
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+      a.length > 1
+    ) {
+      setInterval(() => show(i + 1), 5000);
+    }
+  });
+  document.querySelectorAll(".skill-marquee-track").forEach((track) => {
+    const sourceSet = track.querySelector(".skill-marquee-set");
+    const fillTrack = () => {
+      if (!sourceSet?.offsetWidth) return;
+      let requiredSets = Math.max(
+        2,
+        Math.ceil(
+          (track.parentElement.clientWidth * 2) / sourceSet.offsetWidth,
+        ),
+      );
+      if (requiredSets % 2) requiredSets += 1;
+      while (track.children.length < requiredSets) {
+        const loopSet = sourceSet.cloneNode(true);
+        loopSet.setAttribute("aria-hidden", "true");
+        track.append(loopSet);
+      }
+      track.style.animationDuration = `${(track.scrollWidth / 2 / 28).toFixed(2)}s`;
+    };
+    fillTrack();
+    window.addEventListener("load", fillTrack, { once: true });
+    window.addEventListener("resize", fillTrack);
   });
   document
     .querySelector("[data-top]")
